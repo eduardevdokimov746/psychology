@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+
+        {% block styles %}
+            <link rel="stylesheet" href="{{ absolute_url(asset('files/css/bootstap5.css')) }}">
+            <link rel="stylesheet" href="{{ absolute_url(asset('files/css/fontawesome6.css')) }}">
+            <link rel="stylesheet" href="{{ absolute_url(asset('files/css/main.css')) }}">
+        {% endblock %}
+    </head>
+
+    <body>
+        <div class="container">
+            <header class="mt-3">
+                <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-3 border-bottom">
+                    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                        <img width="50" src="{{ absolute_url(asset('files/images/logo.jpg')) }}" alt="logo">
+                        <h1 class="">HelpHelp24</h1>
+                    </a>
+
+                    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                        <a class="top-nav-item me-2" href="#"><i class="fa-solid fa-user"></i></a>
+                        <a class="top-nav-item" href="#"><i class="fa-solid fa-basket-shopping"></i></a>
+                    </nav>
+                </div>
+            </header>
+
+            <nav class="nav nav-pills nav-fill mb-3">
+                <a class="nav-link  active" aria-current="page" href="#">Консультации</a>
+                <a class="nav-link" href="#">Робот-психолог</a>
+                <a class="nav-link" href="#">Тесты</a>
+                <a class="nav-link" href="#">Аффирмация дня</a>
+                <a class="nav-link" href="#">Статьи</a>
+            </nav>
+
+            <div class="container-fluid bg-3 text-center">
+                <h3>Консультации</h3><br>
+
+                <div class="row mb-5">
+                    <div class="col-sm-3">
+                        <div class="card" >
+                            <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card" >
+                            <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card" >
+                            <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card" >
+                            <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card" >
+                            <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card" >
+                            <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card" >
+                            <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card" >
+                            <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="container-fluid text-center border-top mt-5">
+                <nav class="navbar navbar-expand-md navbar-custom">
+                    <div class="container">
+
+                        <div class="collapse navbar-collapse">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Помощь</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">О программе</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <span>Дипломный проект Радченко В.С.</span>
+                        </div>
+                    </div>
+                </nav>
+            </footer>
+        </div>
+
+        {% block body %}{% endblock %}
+
+        {% block scripts %}
+            <script src="{{ absolute_url(asset('/files/js/bootstrap5.js')) }}"></script>
+            <script src="{{ absolute_url(asset('/files/js/fontawesome6.js')) }}"></script>
+        {% endblock %}
+    </body>
+</html>
