@@ -11,7 +11,6 @@
             <link rel="stylesheet" href="{{ absolute_url(asset('files/css/main.css')) }}">
         {% endblock %}
     </head>
-
     <body>
         <div class="container">
 
@@ -23,22 +22,24 @@
                     </a>
 
                     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                        <a class="top-nav-item me-2" href="#"><i class="fa-solid fa-user"></i></a>
-                        <a class="top-nav-item" href="#"><i class="fa-solid fa-basket-shopping"></i></a>
+                        {# <a class="top-nav-item me-2" href="{{ url('showAuthForm') }}"><i class="fa-solid fa-user"></i></a> #}
+                        <a class="top-nav-item me-2" href="{{ url('client.show') }}"><i class="fa-solid fa-user"></i></a>
+                        <a class="top-nav-item" href="{{ url('cart.index') }}"><i class="fa-solid fa-basket-shopping"></i></a>
                     </nav>
                 </div>
             </header>
-
+            <p></p>
             <nav class="nav nav-pills nav-fill mb-3">
-                <a class="nav-link  active" aria-current="page" href="#">Консультации</a>
+                <a class="nav-link {{ 'consultations' in app.request.requestUri ? 'active' }}" aria-current="page" href="{{ url('consultations.index') }}">Консультации</a>
                 <a class="nav-link" href="#">Робот-психолог</a>
-                <a class="nav-link" href="#">Тесты</a>
-                <a class="nav-link" href="#">Аффирмация дня</a>
-                <a class="nav-link" href="#">Статьи</a>
+                <a class="nav-link {{ 'tests' in app.request.requestUri ? 'active' }}" href="{{ url("tests.index") }}">Тесты</a>
+                <a class="nav-link {{ 'affirmation' in app.request.requestUri ? 'active' }}" href="{{ url('affirmation') }}">Аффирмация дня</a>
+                <a class="nav-link {{ 'articles' in app.request.requestUri ? 'active' }}" href="{{ url('articles.index') }}">Статьи</a>
             </nav>
 
-            <div class="container-fluid bg-3 text-center">
-                <h3>{% block content_title %}{% endblock %}</h3>
+            <h2 class="text-center">{% block content_title %}{% endblock %}</h2>
+
+            <div class="container-fluid bg-3 mt-5">
                 {% block content %}{% endblock %}
             </div>
 
@@ -67,8 +68,9 @@
         </div>
 
         {% block scripts %}
-            <script src="{{ absolute_url(asset('/files/js/bootstrap5.js')) }}"></script>
-            <script src="{{ absolute_url(asset('/files/js/fontawesome6.js')) }}"></script>
+            <script src="{{ absolute_url(asset('files/js/bootstrap5.js')) }}"></script>
+            <script src="{{ absolute_url(asset('files/js/fontawesome6.js')) }}"></script>
+            <script src="{{ absolute_url(asset('files/js/jquery.js')) }}"></script>
         {% endblock %}
     </body>
 </html>

@@ -1,0 +1,21 @@
+<ul class="nav flex-column nav-pills">
+    <li class="nav-item">
+        <a
+            class="nav-link {{ app.request.requestUri|trim('/') is same as 'client' ? 'active' }}"
+            aria-current="page"
+            href="{{ url('client.show') }}"
+            >Профиль</a>
+    </li>
+    <li class="nav-item">
+        <a
+            class="nav-link {{ 'edit' in app.request.requestUri ? 'active' }}"
+            href="{{ url('client.edit') }}"
+            >Редактировать профиль</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item mt-3">
+        <a class="btn btn-primary w-100" href="#">Выйти</a>
+    </li>
+</ul>

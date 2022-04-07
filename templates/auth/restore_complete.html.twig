@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+Пароль успешно изменен
+{% endblock %}
+
+{% block content %}
+<form class="col-5 container" action="{{ url('saveNewPassword') }}" method="POST">
+
+    <p class="text-center">Пароль был успешно изменен. Попробуйте авторизоваться в личном кабинете.</p>
+
+    <a href="{{ url('showAuthForm') }}" class="w-100 btn btn-lg btn-primary mt-3">Авторизоваться</a>
+
+</form>
+{% endblock %}

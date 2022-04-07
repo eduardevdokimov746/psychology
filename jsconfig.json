@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+    //   "target": "", //
+      "baseUrl": "./",
+      "paths": {
+        // "test/*": ["src/actions/test"],
+        "/*": ["src/templates"]
+      }
+    },
+    "exclude": ["node_modules"] // Optional
+  }

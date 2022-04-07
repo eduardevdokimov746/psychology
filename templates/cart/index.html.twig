@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+Корзина
+{% endblock %}
+
+{% block content %}
+<table class="table table-striped text-center">
+    <thead>
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">Название</th>
+            <th scope="col">Психолог</th>
+            <th scope="col">Продолжительность</th>
+            <th scope="col">Цена</th>
+            <th scope="col">Удалить</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Консультация по видео</td>
+            <td>Юлия Свиридова</td>
+            <td>60 мин</td>
+            <td>2300 руб</td>
+            <td><button class="btn btn-primary btn-sm"><i class="fa-solid fa-trash"></i></button></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Консультация по видео</td>
+            <td>Юлия Свиридова</td>
+            <td>60 мин</td>
+            <td>2300 руб</td>
+            <td><button class="btn btn-primary btn-sm"><i class="fa-solid fa-trash"></i></button></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Консультация по видео</td>
+            <td>Юлия Свиридова</td>
+            <td>60 мин</td>
+            <td>2300 руб</td>
+            <td><button class="btn btn-primary btn-sm"><i class="fa-solid fa-trash"></i></button></td>
+        </tr>
+        <tr style="background-color: #ff818b; color: white;">
+            <th scope="row" colspan="2">Итого к оплате</th>
+            <td></td>
+            <td></td>
+            <td>2300 руб</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="d-flex justify-content-end">
+    <a class="btn btn-primary" href="{{ url('cart.order') }}">Оформить заказ</a>
+</div>
+{% endblock %}

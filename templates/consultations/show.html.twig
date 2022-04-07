@@ -1,9 +1,73 @@
 {% extends "base.html.twig" %}
 
 {% block content_title %}
-название
+Консультация по видео
 {% endblock %}
 
 {% block content %}
+<div class="row">
+    <div class="col-4">
+        <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" style="width: 100%" alt="">
+    </div>
+    <div class="col-8">
+        <div>
+            <h3>Психолог: Анна Пертова</h3>
+        </div>
 
+        <div>
+            <div>
+                <h3>
+                    <i class="fa-solid fa-clock"></i>
+                    <span>55 мин</span>
+                </h3>
+            </div>
+            <div>
+                <h3>
+                    <i class="fa-solid fa-coins"></i>
+                    <span>2 500 руб</span>
+                </h3>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary">Добавить в корзину</button>
+        </div>
+        <div class="mt-3">
+            Меня зовут Анна, я кризисный психолог.
+
+
+            Помогаю справиться с тяжёлыми состояниями и найти выход из трудной ситуации. А может, просто наладить контакт с собой, начать лучше слышать и понимать себя. Работаю с психологической травмой (как кризисный психолог-травматерапевт).
+        </div>
+
+        <div class="mt-3">
+            <h3>Отзывы</h3>
+            <div class="comment">
+                <p class="d-flex justify-content-between"><span>Rebecca Flex.</span><span>13:23 21.02.2022<span></p>
+                <p>HTML CSS saved us from a web disaster.HTML CSS saved us from a web disasterHTML CSS saved us from a web disasterHTML CSS saved us from a web disasterHTML CSS saved us from a web disasterHTML CSS saved us from a web disasterHTML CSS saved us from a web disasterHTML CSS saved us from a web disaster</p>
+            </div>
+
+            <div class="comment">
+                <p class="d-flex justify-content-between"><span>Rebecca Flex.</span><span>13:23 21.02.2022<span></p>
+                <p>No one is better than HTML CSS.</p>
+            </div>
+
+            <div class="comment">
+                <div class="row justify-content-between">
+                    <div class="col-6">
+                        <span style="vertical-align: -webkit-baseline-middle;">Авторизуйтесь, чтобы оставить отзыв</span>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-primary">Авторизоваться</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comment">
+                <form action="#">
+                    <textarea class="form-control" name="comment" cols="30" rows="4" placeholder="Введите отзыв..."></textarea>
+                    <button class="btn btn-primary mt-2 float-end">Добавить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

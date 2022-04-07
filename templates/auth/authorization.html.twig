@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+Личный кабинет
+{% endblock %}
+
+{% block content %}
+<form class="col-5 container">
+
+    <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="E-mail">
+        <label for="floatingInput">E-mail</label>
+    </div>
+
+    <div class="form-floating mt-2">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
+        <label for="floatingPassword">Пароль</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Авторизоваться</button>
+
+    <div class="mt-3 text-center">
+        <p><a href="{{ url('showRestoreForm') }}" class="link">Забыли пароль?</a></p>
+        <p><a href="{{ url('showRegForm') }}" class="link">Зарегистрироваться</a></p>
+    </div>
+</form>
+{% endblock %}

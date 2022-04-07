@@ -7,7 +7,7 @@
 }
 
 .nav-link:hover{
-    color: white;
+    color: white !important;
     background-color: #ff818b;
 }
 
@@ -17,8 +17,22 @@
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
 
+.btn-primary:focus{
+    box-shadow: 0 0 0 0.15rem rgb(255 199 203) !important;
+}
+
+.form-control:focus, .form-select:focus, .form-check-input:focus{
+    border-color: rgb(255 199 203) !important;
+    box-shadow: 0 0 0 0.15rem rgb(255 199 203) !important;
+}
+
 .btn-primary:hover{
     background-color: #f93544 !important;
+}
+
+.form-check-input:checked{
+    background-color: #f05a66 !important;
+    border-color: #f05a66 !important;
 }
 
 .navbar-custom .nav-link:hover{
@@ -42,4 +56,50 @@
 .top-nav-item:hover{
     background-color: #f05a66;
     color: white;
+}
+
+.comment{
+    border: 2px solid #ff818b;
+    background-color: #fff0f1;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0
+}
+
+.comment:after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.affirmation-form{
+    position: relative;
+}
+
+.affirmation-btn{
+    position: absolute;
+    left: calc(50% - 129.6px / 2);
+    top: calc(50% - 48px / 2);
+}
+
+#affirmation-msg{
+    display: none;
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    color: white;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.5em;
+    width: 80%;
+}
+
+.link{
+    text-decoration: none;
+    color: #f05a66;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.link:hover{
+    color: #f93544;
 }

@@ -19,9 +19,9 @@ class ExceptionListener
 
     public function onKernelException(ExceptionEvent $event)
     {
-        if ($event->getThrowable() instanceof NotFoundHttpException) {
-            $response = new RedirectResponse($this->router->generate('consultations.index'));
-            $event->setResponse($response);
-        }
+        // if ($event->getThrowable() instanceof NotFoundHttpException) {
+            // $response = new RedirectResponse($this->router->generate('consultations.index'));
+            // $event->setResponse($response);
+        // }
     }
 }
