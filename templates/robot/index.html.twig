@@ -1,0 +1,146 @@
+{% extends "robot/robot_base.html.twig" %}
+
+{% block robot_content %}
+<div class="mt-4">
+    <div class="row mb-3">
+        <label for="name" class="col-sm-3 col-form-label">Как вас зовут?</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="name">
+        </div>
+    </div>
+
+    <div class="row md-3">
+        <label for="name" class="col-sm-3 col-form-label">Ваш пол?</label>
+        <div class="col-sm-9">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">мужской</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">женский</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="birthday" class="col-sm-3 col-form-label">Дата рождения</label>
+        <div class="col-sm-9">
+            <input type="date" class="form-control" id="birthday">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="birthday" class="col-sm-3 col-form-label">С кем вы живете?</label>
+
+        <div class="col-sm-9">
+            <select class="form-select">
+                <option selected>Другое</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="birthday" class="col-sm-3 col-form-label">Ваше семейное положение:</label>
+
+        <div class="col-sm-9">
+            <select class="form-select">
+                <option selected>Другое</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row md-3">
+        <label for="name" class="col-sm-3 col-form-label">Есть у вас дети?</label>
+        <div class="col-sm-9">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">да</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">нет</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="birthday" class="col-sm-3 col-form-label">Чем вы сейчас занимаетесь по жизни?</label>
+
+        <div class="col-sm-9">
+            <select class="form-select">
+                <option selected>Другое</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="birthday" class="col-sm-3 col-form-label">Отметьте галочкой пункты, которые есть у вас.</label>
+
+        <div class="col-sm-9 mb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check1">
+                <label class="form-check-label" for="check1">
+                    Татуировка(и) или пирсинг
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check2">
+                <label class="form-check-label" for="check2">
+                    Алкогольная зависимость
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check3">
+                <label class="form-check-label" for="check3">
+                    Курение
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check4">
+                <label class="form-check-label" for="check4">
+                    Наркотическая зависимость
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check5">
+                <label class="form-check-label" for="check5">
+                    Занимаетесь самоповреждением (режете себя)
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check6">
+                <label class="form-check-label" for="check6">
+                    Что-то из перечисленного: грызете ногти, кусаете губы, щёки изнутри, сдираете прыщики или неровности на теле, рвете волосы или что-то подобное
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check7">
+                <label class="form-check-label" for="check7">
+                    Думаете о суициде
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="check8">
+                <label class="form-check-label" for="check8">
+                    Были попытки(а) суицида
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-primary" href="{{ url('robot.research') }}">Далее</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -16,14 +16,14 @@
 
             <header class="mt-3">
                 <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-3 border-bottom">
-                    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <a href="{{ url('consultations.index') }}" class="d-flex align-items-center text-dark text-decoration-none">
                         <img width="50" src="{{ absolute_url(asset('files/images/logo.jpg')) }}" alt="logo">
                         <h1 class="">HelpHelp24</h1>
                     </a>
 
                     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                        {# <a class="top-nav-item me-2" href="{{ url('showAuthForm') }}"><i class="fa-solid fa-user"></i></a> #}
-                        <a class="top-nav-item me-2" href="{{ url('client.show') }}"><i class="fa-solid fa-user"></i></a>
+                        <a class="top-nav-item me-2" href="{{ url('showAuthForm') }}"><i class="fa-solid fa-user"></i></a>
+                        {# <a class="top-nav-item me-2" href="{{ url('client.show') }}"><i class="fa-solid fa-user"></i></a> #}
                         <a class="top-nav-item" href="{{ url('cart.index') }}"><i class="fa-solid fa-basket-shopping"></i></a>
                     </nav>
                 </div>
@@ -31,7 +31,7 @@
             <p></p>
             <nav class="nav nav-pills nav-fill mb-3">
                 <a class="nav-link {{ 'consultations' in app.request.requestUri ? 'active' }}" aria-current="page" href="{{ url('consultations.index') }}">Консультации</a>
-                <a class="nav-link" href="#">Робот-психолог</a>
+                <a class="nav-link {{ 'robot-psychologist' in app.request.requestUri ? 'active' }}" href="{{ url("robot.index") }}">Робот-психолог</a>
                 <a class="nav-link {{ 'tests' in app.request.requestUri ? 'active' }}" href="{{ url("tests.index") }}">Тесты</a>
                 <a class="nav-link {{ 'affirmation' in app.request.requestUri ? 'active' }}" href="{{ url('affirmation') }}">Аффирмация дня</a>
                 <a class="nav-link {{ 'articles' in app.request.requestUri ? 'active' }}" href="{{ url('articles.index') }}">Статьи</a>
@@ -39,7 +39,7 @@
 
             <h2 class="text-center">{% block content_title %}{% endblock %}</h2>
 
-            <div class="container-fluid bg-3 mt-5">
+            <div class="container-fluid bg-3 mt-3">
                 {% block content %}{% endblock %}
             </div>
 
@@ -50,11 +50,11 @@
                         <div class="collapse navbar-collapse">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Помощь</a>
+                                    <a class="nav-link" href="{{ url('info.faq') }}">Помощь</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">О программе</a>
+                                    <a class="nav-link" href="{{ url('info.about') }}">О программе</a>
                                 </li>
                             </ul>
                         </div>

@@ -1,0 +1,382 @@
+{% extends "robot/robot_base.html.twig" %}
+
+{% block robot_content %}
+<table class="table table-striped mt-4">
+    <tbody>
+        <tr>
+            <td class="align-middle">Ощущаете ли вы тревогу, беспокойство?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Боитесь ли вы чего-то?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Случаются ли с вами приступы страха?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Есть ли что-то, что вам в себе не нравится?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Хотели бы вы что-то в себе изменить?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Ощущаете ли вы стеснение при общении с другими?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Думаете ли вы, что многие люди вас ненавидят?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Страдаете ли вы сейчас от любви (к мужчине / женщине)?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Переживаете ли вы из-за расставания с бывшим партнером (парнем / девушкой)?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Есть ли у вас претензии к родителям?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Конфликтуете ли вы с родителями?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Конфликтуете ли вы с кем-то из членов семьи?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Есть ли у вас проблемы в отношениях с вашими детьми?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Беспокоит ли вас что-то в поведении ваших детей?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Беспокоит ли вас что-то в поведении ваших детей?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Если ли у вас проблемы с выбором будущей профессии или учебного заведения?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Вы определились с тем, кем хотите стать (по профессии, роду деятельности)?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Мучают ли вас воспоминания о каком-то тяжелом жизненном событии?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Думаете ли вы о том, что жизнь бессмысленна?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Кажется ли вам, что мир несправедлив?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Вас устраивает ваша жизнь?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Есть ли у вас проблемы со здоровьем, причины которых врачи не могут найти, не могут вылечить? (например, энурез, боли, тремор, заикание, нервные тики, нарушения пищеварения)</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Бывают ли у вас приступы агрессии?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Беспокоят ли вас проблемы во взаимоотношениях с друзьями?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Стараетесь ли вы меньше есть, даже когда голодны? (чтобы не потолстеть)</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Случаются ли с вами эпизоды обжорства?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Очищаете ли вы желудок посредством рвоты?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Беспокоило ли вас чувство подавленности, угнетенности или беспомощности на протяжении последнего месяца?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">На протяжении последнего месяца не появлялось ли у вас чувство равнодушия к когда-то любимым занятиям?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Считаете ли вы, что у вас есть зависимость от чего-то?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Как часто вы употребляете алкоголь?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Как часто вы играете в компьютерные игры?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Появляются ли у вас мысли, которые вас пугают, от которых не можете избавиться?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="align-middle">Бывают ли у вас навязчивые мысли или действия?</td>
+            <td>
+                <select class="form-select">
+                    <option selected>нет</option>
+                    <option value="1">да</option>
+                    <option value="2">иногда</option>
+                </select>
+            </td>
+        </tr>
+      </tbody>
+</table>
+
+<div class="d-flex justify-content-center">
+    <a class="btn btn-primary" href="{{ url('robot.research.result') }}">Отправить</a>
+</div>
+{% endblock %}

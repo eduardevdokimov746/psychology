@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+Психологическая помощь: робот-психолог
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <img src="{{ absolute_url(asset('files/images/robot/info1.jpg')) }}" alt="info1" class="w-50">
+</div>
+<div>
+    <p class="text-center" style="font-size: .7em">
+        На каком-то жизненном этапе каждый из нас оказывается в состоянии, когда ему нужна психологическая помощь. Однако, работа психолога стоит денег, которые не каждый и не всегда может себе позволить заплатить. Именно поэтому мы создали программу робота-психолога. Вы можете пройти быструю диагностику, и робот определит ваши психологические проблемы. Если вы уже знаете, по какой проблеме вам нужна помощь психолога, то выбирайте пункт "Я уже знаю, какую программу хочу обсудить".
+    </p>
+</div>
+
+<div>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link {{ app.request.requestUri|replace({'robot-psychologist': ''})|trim('/') is empty or 'research' in app.request.requestUri ? 'active' }}" aria-current="page" href="{{ url('robot.index') }}">Я тут впервые</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {{ 'problems' in app.request.requestUri ? 'active' }}" href="{{ url('robot.problems') }}">Я уже знаю, какую проблему хочу обсудить</a>
+        </li>
+      </ul>
+</div>
+
+{% block robot_content %}{% endblock %}
+
+{% endblock %}
