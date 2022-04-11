@@ -1,0 +1,280 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+    Определение подходящей профессии (дифференциально-диагностический опросник Климова Е.А.)
+{% endblock %}
+
+{% block content %}
+<h5>В каждой строке выберите, какое занятие было бы для вас предпочтительнее (если выбирать между двумя противоположными вариантами)</h5>
+
+<table class="w-100 mt-3">
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb1" id="rb1">
+                <label class="form-check-label" for="rb1">a) Ухаживать за животными</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb1" id="rb1-2">
+                <label class="form-check-label" for="rb1-2">b) Обслуживать машины, приборы (следить, регулировать)</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb2" id="rb2">
+                <label class="form-check-label" for="rb2">a) Помогать больным</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb2" id="rb2-2">
+                <label class="form-check-label" for="rb2-2">b) Составлять таблицы, схемы, программы для вычислительных машин</label>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb3" id="rb3">
+                <label class="form-check-label" for="rb3">a) Следить за качеством книжных иллюстраций, плакатов, художественных открыток, грампластинок</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb3" id="rb3-2">
+                <label class="form-check-label" for="rb3-2">b) Следить за состоянием, развитием растений</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb4" id="rb4">
+                <label class="form-check-label" for="rb4">a) Обрабатывать материалы (дерево, ткань, металл, пластмассу и т.п.)</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb4" id="rb4-2">
+                <label class="form-check-label" for="rb4-2">b) Доводить товары до потребителя, рекламировать, продавать</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb5" id="rb5">
+                <label class="form-check-label" for="rb5">a) Обсуждать научно-популярные книги, статьи</label>
+            </div>
+
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb5" id="rb5-2">
+                <label class="form-check-label" for="rb5-2">b) Обсуждать художественные книги (или пьесы, концерты)</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb6" id="rb6">
+                <label class="form-check-label" for="rb6">a) Выращивать молодняк (животных какой-либо породы)</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb6" id="rb6-2">
+                <label class="form-check-label" for="rb6-2">b) Тренировать товарищей (или младших) в выполнении каких-либо действий (трудовых, учебных, спортивных)</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb7" id="rb7">
+                <label class="form-check-label" for="rb7">a) Копировать рисунки, изображения (или настраивать музыкальные инструменты)</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb7" id="rb7-2">
+                <label class="form-check-label" for="rb7-2">b) Управлять каким-либо грузовым (подъемным или транспортным) средством – подъемным краном, трактором, тепловозом и др.</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb8" id="rb8">
+                <label class="form-check-label" for="rb8">a) Сообщать, разъяснять людям нужные им сведения (в справочном бюро, на экскурсии и т.д.)</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb8" id="rb8-2">
+                <label class="form-check-label" for="rb8-2">b) Оформлять выставки, витрины (или участвовать в подготовке пьес, концертов)</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb9" id="rb9">
+                <label class="form-check-label" for="rb9">a) Ремонтировать вещи, изделия (одежду, технику), жилище</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb9" id="rb9-2">
+                <label class="form-check-label" for="rb9-2">b) Искать и исправлять ошибки в текстах, таблицах, рисунках</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb10" id="rb10">
+                <label class="form-check-label" for="rb10">a) Лечить животных</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb10" id="rb10-2">
+                <label class="form-check-label" for="rb10-2">b) Выполнять вычисления, расчеты</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb11" id="rb11">
+                <label class="form-check-label" for="rb11">a) Выводить новые сорта растений</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb11" id="rb11-2">
+                <label class="form-check-label" for="rb11-2">b) Конструировать, проектировать новые виды промышленных изделий (машины, одежду, дома, продукты питания и т.п.)</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb12" id="rb12">
+                <label class="form-check-label" for="rb12">a) Разбирать споры, ссоры между людьми, убеждать, разъяснять, наказывать, поощрять</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb12" id="rb12-2">
+                <label class="form-check-label" for="rb12-2">b) Разбираться в чертежах, схемах, таблицах (проверять, уточнять, приводить в порядок)</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb13" id="rb13">
+                <label class="form-check-label" for="rb13">a) Наблюдать, изучать работу кружков художественной самодеятельности</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb13" id="rb13-2">
+                <label class="form-check-label" for="rb13-2">b) Наблюдать, изучать жизнь микробов</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb14" id="rb14">
+                <label class="form-check-label" for="rb14">a) Обслуживать, налаживать медицинские приборы, аппараты</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb14" id="rb14-2">
+                <label class="form-check-label" for="rb14-2">b) Оказывать людям медицинскую помощь при ранениях, ушибах, ожогах и т.п.</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb15" id="rb15">
+                <label class="form-check-label" for="rb15">a) Художественно описывать, изображать события (наблюдаемые и представляемые)</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb15" id="rb15-2">
+                <label class="form-check-label" for="rb15-2">b) Составлять точные описания-отчеты о наблюдаемых явлениях, событиях, измеряемых объектах и др.</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb16" id="rb16">
+                <label class="form-check-label" for="rb16">a) Делать лабораторные анализы в больнице</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb16" id="rb16-2">
+                <label class="form-check-label" for="rb16-2">b) Принимать, осматривать больных, беседовать с ними, назначать лечение</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb17" id="rb17">
+                <label class="form-check-label" for="rb17">a) Красить или расписывать стены помещений, поверхность изделий</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb17" id="rb17-2">
+                <label class="form-check-label" for="rb17-2">b) Играть на сцене, принимать участие в концертах</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb18" id="rb18">
+                <label class="form-check-label" for="rb18">a) Организовать культпоходы сверстников или младших в театры, музеи, экскурсии, туристические походы и т.п.</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb18" id="rb18-2">
+                <label class="form-check-label" for="rb18-2">b) Заниматься черчением, копировать чертежи, карты</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class=" pb-4">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb19" id="rb19">
+                <label class="form-check-label" for="rb19">a) Изготовлять по чертежам детали, изделия (машины, одежду), строить здания</label>
+            </div>
+        </td>
+        <td class="bgc-custom  pb-4 align-baseline">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="rb19" id="rb19-2">
+                <label class="form-check-label" for="rb19-2">b) Работать на клавишных машинах (пишущей машинке, телетайпе, наборной машине и др.)</label>
+            </div>
+        </td>
+    </tr>
+</table>
+{% endblock %}

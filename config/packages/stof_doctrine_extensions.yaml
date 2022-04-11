@@ -1,4 +1,4 @@
-# stof_doctrine_extensions:
-#     orm:
-#         default:
-#             sluggable: true
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable: true
