@@ -108,3 +108,19 @@
 .bgc-custom{
     background-color: #fff0f1;
 }
+
+.btn-outline-custom{
+    color: #f05a66;
+    border-color: #f05a66;
+}
+
+.btn-outline-custom:hover{
+    color: white;
+    background-color: #f05a66 !important;
+}
+
+.btn-check:checked+.btn-outline-custom, .btn-outline-custom:active{
+    color: white;
+    background-color: #f05a66 !important;
+    box-shadow: none !important;
+}

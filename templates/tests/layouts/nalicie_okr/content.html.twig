@@ -1,0 +1,130 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+Экспресс-тест на наличие обсессивно-компульсивного расстройства
+{% endblock %}
+
+{% block content %}
+<p>
+    ОКР или обсессивно-компульсивное расстройство - это психическое расстройство, в основе которого лежат навязчивые мысли, идеи и действия, возникающие помимо желания человека и сложно им контролируемые. Ответьте на следующие 7 вопросов. Это позволит определить вероятность наличия у вас обсессивно-компульсивного расстройства.
+</p>
+
+<table class="table w-100 mt-3 mb-3">
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Бывает ли у вас беспричинная тревога? (1 из 7)</p>
+            <div class="w-50 m-auto">
+                <div>
+                    <input type="radio" class="btn-check" name="rb1" id="rb1">
+                    <label class="btn btn-outline-custom w-75" for="rb1">НЕТ</label>
+                </div>
+
+                <div>
+                    <input type="radio" class="btn-check" name="rb1" id="rb1-2">
+                    <label class="btn btn-outline-custom w-75 mt-2" for="rb1-2">ДА</label>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Часто ли вас одолевает страх? (2 из 7)</p>
+            <div class="w-50 m-auto">
+                <div>
+                    <input type="radio" class="btn-check" name="rb2" id="rb2">
+                    <label class="btn btn-outline-custom w-75" for="rb2">НЕТ</label>
+                </div>
+
+                <div>
+                    <input type="radio" class="btn-check" name="rb2" id="rb2-2">
+                    <label class="btn btn-outline-custom w-75 mt-2" for="rb2-2">ДА</label>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Выполняете ли вы какие-либо навязчивые действия? (например, перепроверка своих ошибок, перечитывание, проверка закрытия дверей, различные ритуалы) (3 из 7)</p>
+            <div class="w-50 m-auto">
+                <div>
+                    <input type="radio" class="btn-check" name="rb3" id="rb3">
+                    <label class="btn btn-outline-custom w-75" for="rb3">НЕТ</label>
+                </div>
+
+                <div>
+                    <input type="radio" class="btn-check" name="rb3" id="rb3-2">
+                    <label class="btn btn-outline-custom w-75 mt-2" for="rb3-2">ДА</label>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Помните ли вы, когда это начало с вами происходить? (4 из 7)</p>
+            <div class="w-50 m-auto">
+                <div>
+                    <input type="radio" class="btn-check" name="rb4" id="rb4">
+                    <label class="btn btn-outline-custom w-75" for="rb4">НЕТ</label>
+                </div>
+
+                <div>
+                    <input type="radio" class="btn-check" name="rb4" id="rb4-2">
+                    <label class="btn btn-outline-custom w-75 mt-2" for="rb4-2">ДА</label>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Боитесь ли вы заразиться болезнями? (5 из 7)</p>
+            <div class="w-50 m-auto">
+                <div>
+                    <input type="radio" class="btn-check" name="rb5" id="rb5">
+                    <label class="btn btn-outline-custom w-75" for="rb5">НЕТ</label>
+                </div>
+
+                <div>
+                    <input type="radio" class="btn-check" name="rb5" id="rb5-2">
+                    <label class="btn btn-outline-custom w-75 mt-2" for="rb5-2">ДА</label>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Вы неуверены в себе? (6 из 7)</p>
+            <div class="w-50 m-auto">
+                <div>
+                    <input type="radio" class="btn-check" name="rb6" id="rb6">
+                    <label class="btn btn-outline-custom w-75" for="rb6">НЕТ</label>
+                </div>
+
+                <div>
+                    <input type="radio" class="btn-check" name="rb6" id="rb6-2">
+                    <label class="btn btn-outline-custom w-75 mt-2" for="rb6-2">ДА</label>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Стараетесь ли вы выстраивать свою жизнь по четкому графику и четким ритуалам? (7 из 7)</p>
+            <div class="w-50 m-auto">
+                <div>
+                    <input type="radio" class="btn-check" name="rb7" id="rb7">
+                    <label class="btn btn-outline-custom w-75" for="rb7">НЕТ</label>
+                </div>
+
+                <div>
+                    <input type="radio" class="btn-check" name="rb7" id="rb7-2">
+                    <label class="btn btn-outline-custom w-75 mt-2" for="rb7-2">ДА</label>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div class="d-flex justify-content-center">
+    <a class="btn btn-primary" href="{{ url('robot.research.result') }}">Отправить</a>
+</div>
+{% endblock %}

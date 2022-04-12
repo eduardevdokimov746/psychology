@@ -12,7 +12,8 @@ class ArticleController extends AbstractController
     #[Route(path: '/', name: 'index')]
     public function index(): Response
     {
-        return $this->render('articles/index.html.twig');
+        return $this->render('mails/restore_password.html.twig');
+        // return $this->render('articles/index.html.twig');
     }
 
     #[Route(path: '/{article<\D+>}', name: 'show')]

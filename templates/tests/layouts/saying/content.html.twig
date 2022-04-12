@@ -1,0 +1,321 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+Тест "30 пословиц". Стратегия вашего поведения в конфликте
+{% endblock %}
+
+{% block content %}
+<p>
+    Если вы подросток и у вас есть проблемы в семье, или же вы взрослый, но часто конфликтуете с кем-то, то предлагаем пройти этот тест.
+</p>
+<p>
+    Представьте себе, что вы — экзаменатор, оценивающий предлагаемые ниже суждения так, что не удовлетворяющие из них лично вас оцениваются 1-2, а совпадающие с вашим личным мнением или близкие к нему — 4 или 5. Оценку 3 не используйте. Оцените каждое суждение без особенно долгих раздумий. Оценки ставятся по первому ясному впечатлению напротив каждого суждения, приведенного ниже.
+</p>
+
+<table class="table w-100 mt-3 mb-3">
+    <tr>
+        <td class="w-75">
+            <p>
+                1. Худой мир лучше доброй ссоры.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                2. Если не можешь заставить другого думать, как ты хочешь, заставь его делать.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                3. Мягко стелет, да жестко спать.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                4. Рука руку моет.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                5. Ум хорошо, а два лучше.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                6. Из двоих спорящих умнее тот, кто замолчит.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                7. Кто сильнее, тот и прав.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                8. Не подмажешь — не поедешь.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                9. С паршивой овцы хоть шерсти клок.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                10. Правда то, что умный знает, а не то, о чем все бают.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                11. Кто ударит и убежит, тот смелый драться хоть каждый день.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                12. Слово «победа» четко написано только на спинах врагов.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                13. Убивай врагов своей добротой.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                14. Честная сделка не вызывает ссоры.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                15. Ни у кого нет полного ответа, но у каждого есть что добавить.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                16. Дерись подольше, да ума набирайся побольше.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                17. Сражение выигрывает тот, кто верит в победу.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                18. Добро слово победит.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                19. Ты — мне, я — тебе.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                20. Только тот, кто откажется от своей монополии на истину, может извлечь пользу из истины, которой обладает другой.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                21. Кто спорит — ни гроша не стоит.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                22. Кто не отступает — тот обращает в бегство.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                23. Ласковый теленок двух маток сосет.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                24. Кто дарит — друзей наживает.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                25. Вынеси заботы на свет и держи с другими совет.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                26. Лучший способ решить конфликт — избежать его.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                27. Семь раз отмерь, один раз отрежь.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                28. Кротость торжествует над злом.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                29. Лучше синица в руках, чем журавль в небе.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+    <tr>
+        <td class="w-75">
+            <p>
+                30. Чистосердечие, честь и доверие сдвинут горы.
+            </p>
+        </td>
+        <td>
+            <input class="form-control form-control-sm" type="number" min="1" max="5">
+        </td>
+    </tr>
+</table>
+
+<div class="d-flex justify-content-center">
+    <a class="btn btn-primary" href="{{ url('robot.research.result') }}">Отправить</a>
+</div>
+{% endblock %}

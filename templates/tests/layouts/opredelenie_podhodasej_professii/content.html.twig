@@ -7,7 +7,7 @@
 {% block content %}
 <h5>В каждой строке выберите, какое занятие было бы для вас предпочтительнее (если выбирать между двумя противоположными вариантами)</h5>
 
-<table class="w-100 mt-3">
+<table class="w-100 mt-3 mb-3">
     <tr>
         <td class=" pb-4">
             <div class="form-check">
@@ -277,4 +277,8 @@
         </td>
     </tr>
 </table>
+
+<div class="d-flex justify-content-center">
+    <a class="btn btn-primary" href="{{ url('robot.research.result') }}">Отправить</a>
+</div>
 {% endblock %}

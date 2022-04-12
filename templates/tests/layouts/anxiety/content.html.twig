@@ -1,0 +1,1219 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+Тест на тревожность Спилбергера Ханина
+{% endblock %}
+
+{% block content %}
+<p>
+    Тест исследует психологическую тревожность. В тесте Спилберга-Ханина оценивается ваша ситуативная и личностная тревожность. Прочитайте внимательно каждое из приведенных предложений и выберите вариант в зависимости от того, как вы себя чувствуете в данный момент.
+</p>
+
+<table class="table w-100 mt-3 mb-3">
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я спокоен (1 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb1" id="rb1">
+                            <label class="btn btn-outline-custom w-100" for="rb1">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb1" id="rb1-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb1-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb1" id="rb1-3">
+                            <label class="btn btn-outline-custom w-100" for="rb1-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb1" id="rb1-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb1-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Мне ничто не угрожает (2 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb2" id="rb2">
+                            <label class="btn btn-outline-custom w-100" for="rb2">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb2" id="rb2-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb2-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb2" id="rb2-3">
+                            <label class="btn btn-outline-custom w-100" for="rb2-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb2" id="rb2-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb2-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я нахожусь в напряжении (3 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb3" id="rb3">
+                            <label class="btn btn-outline-custom w-100" for="rb3">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb3" id="rb3-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb3-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb3" id="rb3-3">
+                            <label class="btn btn-outline-custom w-100" for="rb3-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb3" id="rb3-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb3-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я испытываю сожаление (4 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb4" id="rb4">
+                            <label class="btn btn-outline-custom w-100" for="rb4">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb4" id="rb4-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb4-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb4" id="rb4-3">
+                            <label class="btn btn-outline-custom w-100" for="rb4-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb4" id="rb4-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb4-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я чувствую себя свободно (5 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb5" id="rb5">
+                            <label class="btn btn-outline-custom w-100" for="rb5">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb5" id="rb5-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb5-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb5" id="rb5-3">
+                            <label class="btn btn-outline-custom w-100" for="rb5-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb5" id="rb5-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb5-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я расстроен (6 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb6" id="rb6">
+                            <label class="btn btn-outline-custom w-100" for="rb6">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb6" id="rb6-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb6-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb6" id="rb6-3">
+                            <label class="btn btn-outline-custom w-100" for="rb6-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb6" id="rb6-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb6-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Меня волнуют возможные неудачи (7 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb7" id="rb7">
+                            <label class="btn btn-outline-custom w-100" for="rb1">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb7" id="rb7-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb7-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb7" id="rb7-3">
+                            <label class="btn btn-outline-custom w-100" for="rb7-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb7" id="rb7-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb7-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я чувствую себя отдохнувшим (8 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb8" id="rb8">
+                            <label class="btn btn-outline-custom w-100" for="rb8">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb8" id="rb8-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb8-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb8" id="rb8-3">
+                            <label class="btn btn-outline-custom w-100" for="rb8-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb8" id="rb8-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb8-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я встревожен (9 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb9" id="rb9">
+                            <label class="btn btn-outline-custom w-100" for="rb9">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb9" id="rb9-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb9-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb9" id="rb9-3">
+                            <label class="btn btn-outline-custom w-100" for="rb9-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb9" id="rb9-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb9-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я испытываю чувство внутреннего удовлетворения (10 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb10" id="rb10">
+                            <label class="btn btn-outline-custom w-100" for="rb10">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb10" id="rb10-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb10-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb10" id="rb10-3">
+                            <label class="btn btn-outline-custom w-100" for="rb10-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb10" id="rb10-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb10-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я уверен в себе (11 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb111" id="rb11">
+                            <label class="btn btn-outline-custom w-100" for="rb11">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb11" id="rb11-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb11-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb11" id="rb11-3">
+                            <label class="btn btn-outline-custom w-100" for="rb11-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb11" id="rb11-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb11-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я нервничаю (12 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb12" id="rb12">
+                            <label class="btn btn-outline-custom w-100" for="rb12">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb12" id="rb12-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb12-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb12" id="rb12-3">
+                            <label class="btn btn-outline-custom w-100" for="rb12-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb12" id="rb12-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb12-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я не нахожу себе места (13 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb13" id="rb13">
+                            <label class="btn btn-outline-custom w-100" for="rb13">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb13" id="rb13-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb13-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb13" id="rb13-3">
+                            <label class="btn btn-outline-custom w-100" for="rb13-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb13" id="rb13-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb13-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я взвинчен (14 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb14" id="rb14">
+                            <label class="btn btn-outline-custom w-100" for="rb14">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb14" id="rb14-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb14-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb14" id="rb14-3">
+                            <label class="btn btn-outline-custom w-100" for="rb14-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb14" id="rb14-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb14-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я не чувствую скованности, напряжения (15 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb15" id="rb15">
+                            <label class="btn btn-outline-custom w-100" for="rb15">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb15" id="rb15-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb15-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb15" id="rb15-3">
+                            <label class="btn btn-outline-custom w-100" for="rb15-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb15" id="rb15-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb15-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я доволен (16 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb16" id="rb16">
+                            <label class="btn btn-outline-custom w-100" for="rb16">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb16" id="rb16-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb16-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb16" id="rb16-3">
+                            <label class="btn btn-outline-custom w-100" for="rb16-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb16" id="rb16-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb16-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я озабочен (17 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb17" id="rb17">
+                            <label class="btn btn-outline-custom w-100" for="rb17">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb17" id="rb17-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb17-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb17" id="rb17-3">
+                            <label class="btn btn-outline-custom w-100" for="rb17-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb17" id="rb17-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb17-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я слишком возбужден и мне не по себе (18 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb18" id="rb18">
+                            <label class="btn btn-outline-custom w-100" for="rb18">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb18" id="rb18-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb18-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb18" id="rb18-3">
+                            <label class="btn btn-outline-custom w-100" for="rb18-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb18" id="rb18-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb18-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Мне радостно (19 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb19" id="rb19">
+                            <label class="btn btn-outline-custom w-100" for="rb19">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb19" id="rb19-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb19-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb19" id="rb19-3">
+                            <label class="btn btn-outline-custom w-100" for="rb19-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb19" id="rb19-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb19-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Мне приятно (20 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb20" id="rb20">
+                            <label class="btn btn-outline-custom w-100" for="rb20">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb20" id="rb20-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb20-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb20" id="rb20-3">
+                            <label class="btn btn-outline-custom w-100" for="rb20-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb20" id="rb20-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb20-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я испытываю удовольствие (21 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb21" id="rb21">
+                            <label class="btn btn-outline-custom w-100" for="rb21">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb21" id="rb21-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb21-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb21" id="rb21-3">
+                            <label class="btn btn-outline-custom w-100" for="rb21-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb21" id="rb21-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb21-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я быстро устаю (22 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb22" id="rb22">
+                            <label class="btn btn-outline-custom w-100" for="rb22">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb22" id="rb22-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb22-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb22" id="rb22-3">
+                            <label class="btn btn-outline-custom w-100" for="rb22-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb22" id="rb22-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb22-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я легко могу заплакать (23 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb23" id="rb23">
+                            <label class="btn btn-outline-custom w-100" for="rb23">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb23" id="rb23-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb23-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb23" id="rb23-3">
+                            <label class="btn btn-outline-custom w-100" for="rb23-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb23" id="rb23-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb23-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я хотел бы быть таким же счастливым, как другие (24 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb24" id="rb24">
+                            <label class="btn btn-outline-custom w-100" for="rb24">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb24" id="rb24-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb24-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb24" id="rb24-3">
+                            <label class="btn btn-outline-custom w-100" for="rb24-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb24" id="rb24-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb24-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Бывает, что я проигрываю из-за того, что недостаточно быстро принимаю решения (25 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb25" id="rb25">
+                            <label class="btn btn-outline-custom w-100" for="rb25">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb25" id="rb25-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb25-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb25" id="rb25-3">
+                            <label class="btn btn-outline-custom w-100" for="rb25-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb25" id="rb25-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb25-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я чувствую себя бодрым (26 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb26" id="rb26">
+                            <label class="btn btn-outline-custom w-100" for="rb26">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb26" id="rb26-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb26-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb26" id="rb26-3">
+                            <label class="btn btn-outline-custom w-100" for="rb26-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb26" id="rb26-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb26-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я спокоен, хладнокровен и собран (27 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb27" id="rb27">
+                            <label class="btn btn-outline-custom w-100" for="rb27">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb27" id="rb27-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb27-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb27" id="rb27-3">
+                            <label class="btn btn-outline-custom w-100" for="rb27-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb27" id="rb27-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb27-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Ожидание трудностей очень тревожит меня (28 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb28" id="rb28">
+                            <label class="btn btn-outline-custom w-100" for="rb28">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb28" id="rb28-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb28-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb28" id="rb28-3">
+                            <label class="btn btn-outline-custom w-100" for="rb28-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb28" id="rb28-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb28-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я слишком переживаю из-за пустяков (29 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb29" id="rb29">
+                            <label class="btn btn-outline-custom w-100" for="rb29">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb29" id="rb29-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb29-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb29" id="rb29-3">
+                            <label class="btn btn-outline-custom w-100" for="rb29-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb29" id="rb29-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb29-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я бываю вполне счастлив (30 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb30" id="rb30">
+                            <label class="btn btn-outline-custom w-100" for="rb30">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb30" id="rb30-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb30-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb30" id="rb30-3">
+                            <label class="btn btn-outline-custom w-100" for="rb30-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb30" id="rb30-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb30-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я принимаю все слишком близко к сердцу (31 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb31" id="rb31">
+                            <label class="btn btn-outline-custom w-100" for="rb31">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb31" id="rb31-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb31-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb31" id="rb31-3">
+                            <label class="btn btn-outline-custom w-100" for="rb31-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb31" id="rb31-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb31-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Мне не хватает уверенности в себе (32 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb32" id="rb32">
+                            <label class="btn btn-outline-custom w-100" for="rb32">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb32" id="rb32-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb32-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb32" id="rb32-3">
+                            <label class="btn btn-outline-custom w-100" for="rb32-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb32" id="rb32-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb32-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я чувствую себя в безопасности (33 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb33" id="rb33">
+                            <label class="btn btn-outline-custom w-100" for="rb33">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb33" id="rb33-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb33-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb33" id="rb33-3">
+                            <label class="btn btn-outline-custom w-100" for="rb33-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb33" id="rb33-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb33-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я стараюсь избегать критических ситуаций и трудностей (34 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb34" id="rb34">
+                            <label class="btn btn-outline-custom w-100" for="rb34">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb34" id="rb34-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb34-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb34" id="rb34-3">
+                            <label class="btn btn-outline-custom w-100" for="rb34-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb34" id="rb34-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb34-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">У меня бывает хандра (35 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb35" id="rb35">
+                            <label class="btn btn-outline-custom w-100" for="rb35">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb35" id="rb35-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb35-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb35" id="rb35-3">
+                            <label class="btn btn-outline-custom w-100" for="rb35-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb35" id="rb35-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb35-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я бываю доволен (36 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb36" id="rb36">
+                            <label class="btn btn-outline-custom w-100" for="rb36">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb36" id="rb36-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb36-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb36" id="rb36-3">
+                            <label class="btn btn-outline-custom w-100" for="rb36-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb36" id="rb36-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb36-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Всякие пустяки отвлекают и волнуют меня (37 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb37" id="rb37">
+                            <label class="btn btn-outline-custom w-100" for="rb37">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb37" id="rb37-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb37-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb37" id="rb37-3">
+                            <label class="btn btn-outline-custom w-100" for="rb37-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb37" id="rb37-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb37-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я так сильно переживаю свои разочарования, что потом долго не могу о них забыть (38 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb38" id="rb38">
+                            <label class="btn btn-outline-custom w-100" for="rb38">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb38" id="rb38-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb38-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb38" id="rb38-3">
+                            <label class="btn btn-outline-custom w-100" for="rb38-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb38" id="rb38-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb38-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Я уравновешенный человек (39 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb39" id="rb39">
+                            <label class="btn btn-outline-custom w-100" for="rb39">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb39" id="rb39-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb39-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb39" id="rb39-3">
+                            <label class="btn btn-outline-custom w-100" for="rb39-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb39" id="rb39-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb39-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pb-4 text-center">
+            <p class="fs-5">Меня охватывает сильное беспокойство, когда я думаю о своих делах и заботах (40 из 40)</p>
+            <div class="w-50 m-auto">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb40" id="rb40">
+                            <label class="btn btn-outline-custom w-100" for="rb40">нет не верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb40" id="rb40-2">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb40-2">верно</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div>
+                            <input type="radio" class="btn-check" name="rb40" id="rb40-3">
+                            <label class="btn btn-outline-custom w-100" for="rb40-3">скорее верно</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="btn-check" name="rb40" id="rb40-4">
+                            <label class="btn btn-outline-custom mt-2 w-100" for="rb40-4">совершенно верно</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+
+</table>
+
+<div class="d-flex justify-content-center">
+    <a class="btn btn-primary" href="{{ url('robot.research.result') }}">Отправить</a>
+</div>
+{% endblock %}

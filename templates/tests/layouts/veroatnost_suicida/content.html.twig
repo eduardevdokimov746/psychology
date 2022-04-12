@@ -1,0 +1,363 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+Тест на вероятность суицида
+{% endblock %}
+
+{% block content %}
+<p>
+    Шкала безнадежности Бека (Hopelessness Scale, Beck et al.) предназначена для предсказания возможности самоубийства на основе мыслей о будущем и возлагаемых на него надежд.
+</p>
+<p>
+    Укажите "ВЕРНО" если Вы согласны с утверждением или "НЕВЕРНО", если Вы не согласны. Среди утверждений нет правильных или неправильных. Не тратьте слишком много времени на одно утверждение.
+</p>
+
+<table class="table table-striped mt-3 mb-3">
+    <tbody>
+        <tr>
+            <td>
+                1. Я жду будущего с надеждой и энтузиазмом
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb1" id="rb1">
+                    <label class="form-check-label" for="rb1">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb1" id="rb1-2">
+                    <label class="form-check-label" for="rb1-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                2. Мне пора сдаться, т.к. я ничего не могу изменить к лучшему
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb2" id="rb2">
+                    <label class="form-check-label" for="rb2">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb2" id="rb2-2">
+                    <label class="form-check-label" for="rb2-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                3. Когда дела идут плохо, мне помогает мысль, что так не может продолжаться всегда
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb3" id="rb3">
+                    <label class="form-check-label" for="rb3">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb3" id="rb3-2">
+                    <label class="form-check-label" for="rb3-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                4. Я не могу представить, на что будет похожа моя жизнь через 10 лет
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb4" id="rb4">
+                    <label class="form-check-label" for="rb4">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb4" id="rb4-2">
+                    <label class="form-check-label" for="rb4-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                5. У меня достаточно времени, чтобы завершить дела, которыми я больше всего хочу заниматься
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb5" id="rb5">
+                    <label class="form-check-label" for="rb5">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb5" id="rb5-2">
+                    <label class="form-check-label" for="rb5-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                6. В будущем, я надеюсь достичь успеха в том, что мне больше всего нравится
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb6" id="rb6">
+                    <label class="form-check-label" for="rb6">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb6" id="rb6-2">
+                    <label class="form-check-label" for="rb6-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                7. Будущее представляется мне во тьме
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb7" id="rb7">
+                    <label class="form-check-label" for="rb7">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb7" id="rb7-2">
+                    <label class="form-check-label" for="rb7-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                8. Я надеюсь получить в жизни больше хорошего, чем средний человек
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb8" id="rb8">
+                    <label class="form-check-label" for="rb8">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb8" id="rb8-2">
+                    <label class="form-check-label" for="rb8-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                9. У меня нет никаких просветов и нет причин верить, что они появятся в будущем
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb9" id="rb9">
+                    <label class="form-check-label" for="rb9">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb9" id="rb9-2">
+                    <label class="form-check-label" for="rb9-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                10. Мой прошлый опыт хорошо меня подготовил к будущему
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb10" id="rb10">
+                    <label class="form-check-label" for="rb10">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb10" id="rb10-2">
+                    <label class="form-check-label" for="rb10-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                11. Всё, что я вижу впереди - скорее, неприятности, чем радости
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb11" id="rb11">
+                    <label class="form-check-label" for="rb11">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb11" id="rb11-2">
+                    <label class="form-check-label" for="rb11-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                12. Я не надеюсь достичь того, чего действительно хочу
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb12" id="rb12">
+                    <label class="form-check-label" for="rb12">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb12" id="rb12-2">
+                    <label class="form-check-label" for="rb12-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                13. Когда я заглядываю в будущее, я надеюсь быть счастливее, чем я есть сейчас
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb13" id="rb13">
+                    <label class="form-check-label" for="rb13">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb13" id="rb13-2">
+                    <label class="form-check-label" for="rb13-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                14. Дела идут не так, как мне хочется
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb14" id="rb14">
+                    <label class="form-check-label" for="rb14">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb14" id="rb14-2">
+                    <label class="form-check-label" for="rb14-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                15. Я сильно верю в своё будущее
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb15" id="rb15">
+                    <label class="form-check-label" for="rb15">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb15" id="rb15-2">
+                    <label class="form-check-label" for="rb15-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                16. Я никогда не достигаю того, что хочу, поэтому глупо что-либо хотеть
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb16" id="rb16">
+                    <label class="form-check-label" for="rb16">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb2" id="rb16-2">
+                    <label class="form-check-label" for="rb16-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                17. Весьма маловероятно, что я получу реальное удовлетворение в будущем
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb17" id="rb17">
+                    <label class="form-check-label" for="rb17">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb17" id="rb17-2">
+                    <label class="form-check-label" for="rb17-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                18. Будущее представляется мне расплывчатым и неопределённым
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb18" id="rb18">
+                    <label class="form-check-label" for="rb18">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb18" id="rb18-2">
+                    <label class="form-check-label" for="rb18-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                19. В будущем меня ждёт больше хороших дней, чем плохих
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb19" id="rb19">
+                    <label class="form-check-label" for="rb19">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb19" id="rb19-2">
+                    <label class="form-check-label" for="rb19-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                20. Бесполезно пытаться получить то, что я хочу, потому, что, вероятно, я не добьюсь этого
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb20" id="rb20">
+                    <label class="form-check-label" for="rb20">Верно</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rb20" id="rb20-2">
+                    <label class="form-check-label" for="rb20-2">Неверно</label>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="d-flex justify-content-center">
+    <a class="btn btn-primary" href="{{ url('robot.research.result') }}">Отправить</a>
+</div>
+{% endblock %}
