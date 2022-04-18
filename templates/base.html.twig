@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{{ app_name }}{% endblock %}</title>
         <link rel="icon" href="{{ absolute_url(asset('files/images/favicon.ico')) }}">
 
         {% block styles %}
@@ -18,7 +18,7 @@
                 <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-3 border-bottom">
                     <a href="{{ url('consultations.index') }}" class="d-flex align-items-center text-dark text-decoration-none">
                         <img width="50" src="{{ absolute_url(asset('files/images/logo.jpg')) }}" alt="logo">
-                        <h1 class="">HelpHelp24</h1>
+                        <h1 class="">{{ app_name }}</h1>
                     </a>
 
                     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
@@ -68,7 +68,7 @@
         </div>
 
         {% block scripts %}
-            <script src="{{ absolute_url(asset('files/js/bootstrap5.js')) }}"></script>
+            <script src="{{ absolute_url(asset('files/js/bootstap5.js')) }}"></script>
             <script src="{{ absolute_url(asset('files/js/fontawesome6.js')) }}"></script>
             <script src="{{ absolute_url(asset('files/js/jquery.js')) }}"></script>
         {% endblock %}

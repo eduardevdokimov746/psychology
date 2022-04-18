@@ -1,0 +1,120 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+Заниженная самооценка, нелюбовь к себе, неприятие себя
+{% endblock %}
+
+{% block content %}
+<p class="text-center">
+    Вопросы о том, как повысить самооценку и уверенность в себе волнуют многих. К сожалению, в современном мире очень много людей страдает проблемой заниженной самооценки. Низкая самооценка приводит к проблемам во всех сферах жизни: любовных отношениях, работе, учебе, отношениях с друзьями и семьей. Формирование самооценки - это важная задача не только для школьников, но и для взрослых людей, страдающих такой проблемой. Повышенная самооценка, как правило, не доставляет таких сильных проблем человеку, как пониженная. Повысить самооценку можно с помощью нашей программы робота-психолога онлайн совершенно бесплатно.
+</p>
+<hr>
+<h4>Рекомендации для повышения Вашей самооценки и принятия себя</h4>
+
+<h5 class="text-center mb-3">Этап 1</h5>
+
+<div class="accordion" id="accordion1">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                <span>Начните заниматься аффирмациями</span>
+                <i class="fa-solid fa-angle-down"></i>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+                Аффирмация - это позитивное утверждение о самом себе. Занимайтесь ими ежедневно, каждое утро. Для этого вы можете использовать наш сервис (это бесплатно).
+                Сервис <a class="link" href="{{ url('affirmation') }}">«Аффирмация дня»</a>. Там указана краткая инструкция.
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+        <button class="accordion-button collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+          <span>Минимизируйте общение с критиками</span>
+                <i class="fa-solid fa-angle-down"></i>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+        <div class="accordion-body">
+            Сократите общение с теми людьми, которые вас как-то критикуют, высмеивают, осуждают, не поддерживают. Даже если люди ваши близкие - сразу уходите из таких разговоров, не терпите эту критику.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-heading3">
+            <button class="accordion-button collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse3" aria-expanded="false" aria-controls="panelsStayOpen-collapse3">
+                <span>Максимизируйте общение с позитивными людьми</span>
+                <i class="fa-solid fa-angle-down"></i>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapse3" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading3">
+            <div class="accordion-body">
+                Так как в Вашем окружении есть люди, которые заряжают энергией, поддерживают Вас - общайтесь как можно больше именно с ними.
+            </div>
+        </div>
+    </div>
+</div>
+
+<h5 class="text-center mt-3 mb-3">Этап 2</h5>
+
+<div class="accordion" id="accordion2">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-heading4">
+            <button class="accordion-button collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse4" aria-expanded="true" aria-controls="panelsStayOpen-collapse4">
+                <span>Не критикуйте себя</span>
+                <i class="fa-solid fa-angle-down"></i>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapse4" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading4">
+            <div class="accordion-body">
+                Не говорите вслух о своих недостатках (особенно при других людях). Не говорите об этом даже в шутку. Дело в том, что на самом деле другим людям глубоко плевать на ваши проблемы и недостатки, они не замечают их. Ведь они сосредоточены на себе и своих проблемах. Поэтому если вы не будете акцентировать сами на них свое внимание, то никто другой их и не заметит.
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-heading5">
+        <button class="accordion-button collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse5" aria-expanded="false" aria-controls="panelsStayOpen-collapse5">
+          <span>Займитесь спортом</span>
+                <i class="fa-solid fa-angle-down"></i>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading5">
+        <div class="accordion-body">
+            Занимайтесь любым спортом регулярно (хоты бы 2 раза в неделю). Дело в том, что во время занятий спортом вырабатывается серотонин. А значит, Вы станете позитивнее, да и многие проблемы после активных физических нагрузок совсем перестают волновать. Например, вот пробежал ты несколько километров, или же наплавался в бассейне - и всё, ты спокоен, ничего уже не волнует, мозг расслабился, напряжение спало.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-heading6">
+            <button class="accordion-button collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse6" aria-expanded="false" aria-controls="panelsStayOpen-collapse6">
+                <span>Сравнивайте себя с собой</span>
+                <i class="fa-solid fa-angle-down"></i>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapse6" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading6">
+            <div class="accordion-body">
+                Не сравнивайте себя с другими людьми. В этом нет никакого смысла. Ведь всегда найдется тот, кто будет сильнее, красивее, богаче, удачливее, умнее и так далее. Эта идея бессмысленна и заранее проигрышная. Единственный человек, с которым Вы можете себя сравнивать - это вы сами в прошлом. Так сравнение будет действительно объективным и полезным. Завидуя другим вы даже до конца не знаете, чему завидуете... Ведь человек внешне может выглядеть счастливым, а на самом деле, быть глубоко несчастным. Вы никогда не узнаете, что происходит у него в голове, чем он живет на самом деле, что скрывается за его красивой внешностью или богатством.
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-heading7">
+            <button class="accordion-button collapsed d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse7" aria-expanded="false" aria-controls="panelsStayOpen-collapse7">
+                <span>Измените свои недостатки</span>
+                <i class="fa-solid fa-angle-down"></i>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapse7" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading7">
+            <div class="accordion-body">
+                Если Вы можете относительно легко изменить свои недостатки, которые влияют на Вашу самооценку, - сделайте это. Речь идет именно о таких изменениях, которые не вредят здоровью. Например, смена прически, одежды, получение дополнительного образования, развитие каких-то навыков. А вот изменения тела, такие как пирсинг, татуировки, пластические операции и подобное сюда не относятся.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

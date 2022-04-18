@@ -124,3 +124,34 @@
     background-color: #f05a66 !important;
     box-shadow: none !important;
 }
+
+.accordion-button{
+    color: black;
+    background-color: #fff0f1;
+}
+
+.accordion-button:focus{
+    box-shadow: none !important;
+    background-color: #fff0f1 !important;
+    border-color: none !important;
+}
+
+.accordion-button:not(.collapsed){
+    color: white;
+    background-color: #ff818b !important;
+}
+
+.accordion-button::after{
+    display: none !important;
+}
+
+.accordion-button:not(.collapsed) i{
+    color: white;
+    transform: rotate(-180deg);
+}
+
+.link{
+    text-decoration: none;
+    color: #f05a66;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}

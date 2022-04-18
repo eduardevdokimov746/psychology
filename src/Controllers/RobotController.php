@@ -2,17 +2,40 @@
 
 namespace App\Controllers;
 
+use App\Factories\RobotFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+use function App\Helpers\slug;
+
 #[Route(path: 'robot-psychologist', name: 'robot.')]
 class RobotController extends AbstractController
 {
+    protected RobotFactory $robotFactory;
+
+    public function __construct(RobotFactory $robotFactory)
+    {
+        $this->robotFactory = $robotFactory;
+    }
+
     #[Route(path: '/', name: 'index')]
     public function index(): Response
     {
+        dd(slug('Заниженная самооценка, нелюбовь к себе, неприятие себя'));
         return $this->render('robot/index.html.twig');
+    }
+
+    #[Route(path: '/{slug}/{step}', name: 'show', defaults: ['step' => 'step1'])]
+    public function showRobot(string $slug, string $step): Response
+    {
+        return $this->render($this->robotFactory->makeRobot($slug)->getContentLayout($step));
+    }
+
+    #[Route(path: '/{slug}/result', name: 'result')]
+    public function showRobotResult(string $slug): Response
+    {
+        return $this->render($this->robotFactory->makeRobot($slug)->getResultLayout());
     }
 
     #[Route(path: '/problems', name: 'problems')]
