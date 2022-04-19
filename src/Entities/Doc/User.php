@@ -26,12 +26,15 @@ class User
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private string $email_confirmation;
 
-    #[ORM\OneToOne(targetEntity: Role::class, cascade: ['persist', 'remove'])]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\ManyToOne(targetEntity: Role::class)]
     private Role $role;
 
-    #[ORM\OneToOne(targetEntity: PsychologistProfile::class, mappedBy: 'id')]
-    private ?PsychologistProfile $psychologistProfile;
+    public function __construct(string $email, string $password, Role $role)
+    {
+        $this->setEmail($email);
+        $this->setPassword($password);
+        $this->setRole($role);
+    }
 
     public function getId(): ?int
     {
@@ -57,7 +60,7 @@ class User
 
     public function setPassword(string $password): self
     {
-        $this->password = $password;
+        $this->password = password_hash($password, PASSWORD_DEFAULT);
 
         return $this;
     }

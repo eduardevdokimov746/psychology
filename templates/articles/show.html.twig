@@ -1,5 +1,11 @@
 {% extends "base.html.twig" %}
 
+{% block content_title %}
+    {{ article.title }}
+{% endblock %}
+
 {% block content %}
-sad
+    {{ article.content|raw }}
+
+    <h5>Автор: {{ article.psychologistProfile.firstName }} {{ article.psychologistProfile.lastName }}</h5>
 {% endblock %}

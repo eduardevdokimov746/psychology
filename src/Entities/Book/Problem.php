@@ -2,9 +2,10 @@
 
 namespace App\Entities\Book;
 
+use App\Repositories\Book\ProblemRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity]
+#[ORM\Entity(repositoryClass: ProblemRepository::class)]
 #[ORM\Table(name: 'book_problems')]
 class Problem
 {
@@ -15,6 +16,11 @@ class Problem
 
     #[ORM\Column(type: 'string', length: 255, unique: true)]
     private string $name;
+
+    public function __construct(string $name)
+    {
+        $this->setName($name);
+    }
 
     public function getId(): ?int
     {

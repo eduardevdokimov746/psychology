@@ -12,6 +12,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.11",
         "knplabs/doctrine-behaviors": "^2.6",
+        "loophp/collection": "^6.0",
         "phpmd/phpmd": "^2.12",
         "stof/doctrine-extensions-bundle": "^1.7",
         "symfony/asset": "6.0.*",
@@ -83,6 +84,7 @@
         }
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "symfony/debug-bundle": "6.0.*",
         "symfony/stopwatch": "6.0.*",
         "symfony/web-profiler-bundle": "6.0.*"

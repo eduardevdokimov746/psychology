@@ -3,12 +3,13 @@
 namespace App\Entities\Doc;
 
 use App\Entities\Book\Problem;
+use App\Repositories\Doc\PsychologistProfileRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\PersistentCollection;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 
-#[ORM\Entity]
+#[ORM\Entity(repositoryClass: PsychologistProfileRepository::class)]
 #[ORM\Table(name: 'doc_psychologist_profiles')]
 class PsychologistProfile
 {
@@ -20,19 +21,19 @@ class PsychologistProfile
     private int $id;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private string $firstName;
+    private ?string $firstName;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private string $lastName;
+    private ?string $lastName;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private string $patronymic;
+    private ?string $patronymic;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private string $education;
+    private ?string $education;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private string $avatar;
+    private ?string $avatar;
 
     #[ORM\OneToOne(targetEntity: User::class)]
     private User $user;
@@ -49,6 +50,14 @@ class PsychologistProfile
     #[ORM\InverseJoinColumn(name: 'problem_id', referencedColumnName: 'id')]
     private PersistentCollection|ArrayCollection $dontWorkWithProblems;
 
+    public function __construct(User $user)
+    {
+        $this->workWithProblems = new ArrayCollection();
+        $this->dontWorkWithProblems = new ArrayCollection();
+
+        $this->setUser($user);
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -64,6 +73,22 @@ class PsychologistProfile
         $this->firstName = $firstName;
 
         return $this;
+    }
+
+    /**
+     * @return ArrayCollection|PersistentCollection
+     */
+    public function getWorkWithProblems(): ArrayCollection|PersistentCollection
+    {
+        return $this->workWithProblems;
+    }
+
+    /**
+     * @return ArrayCollection|PersistentCollection
+     */
+    public function getDontWorkWithProblems(): ArrayCollection|PersistentCollection
+    {
+        return $this->dontWorkWithProblems;
     }
 
     public function getLastName(): ?string
@@ -128,5 +153,19 @@ class PsychologistProfile
     public function setUser(User $user): void
     {
         $this->user = $user;
+    }
+
+    public function addWorkProblem(Problem $problem): self
+    {
+        $this->workWithProblems->add($problem);
+
+        return $this;
+    }
+
+    public function addDontWorkProblem(Problem $problem): self
+    {
+        $this->dontWorkWithProblems->add($problem);
+
+        return $this;
     }
 }

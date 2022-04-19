@@ -4,7 +4,7 @@ namespace App\TestsPsycho;
 
 use App\Interfaces\Test;
 
-class Veroaytnost implements Test
+class Veroyatnost implements Test
 {
     public function getContentLayout(): string
     {

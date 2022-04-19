@@ -19,6 +19,12 @@ class Role
     #[ORM\Column(type: 'string', length: 255)]
     private string $description;
 
+    public function __construct(string $name, string $description)
+    {
+        $this->setName($name);
+        $this->setDescription($description);
+    }
+
     public function getId(): ?int
     {
         return $this->id;

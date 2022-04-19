@@ -8,7 +8,7 @@ use App\TestsPsycho\AvailabilityOkr;
 use App\TestsPsycho\Okr;
 use App\TestsPsycho\ProfOrientation;
 use App\TestsPsycho\Saying;
-use App\TestsPsycho\Veroaytnost;
+use App\TestsPsycho\Veroyatnost;
 
 class TestFactory
 {
@@ -16,7 +16,7 @@ class TestFactory
     {
         return match ($slug) {
             'opredelenie-podhodasej-professii' => new ProfOrientation(),
-            'veroatnost-suicida' => new Veroaytnost(),
+            'veroatnost-suicida' => new Veroyatnost(),
             'obsessivno-kompulsivnogo-rasstrojstva' => new Okr(),
             'nalicie-obsessivno-kompulsivnogo-rasstrojstva' => new AvailabilityOkr(),
             'trevoznost-spilbergera-hanina' => new Anxiety(),

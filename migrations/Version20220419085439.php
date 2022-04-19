@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20220418075531 extends AbstractMigration
+final class Version20220419085439 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -86,9 +86,9 @@ final class Version20220418075531 extends AbstractMigration
         $this->addSql('CREATE INDEX IDX_F10CB22E5CAE2FF9 ON doc_test_results (client_profile_id)');
         $this->addSql('CREATE TABLE doc_tests (id SMALLINT NOT NULL, title VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, preview_img VARCHAR(255) NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE UNIQUE INDEX UNIQ_7D899108989D9B62 ON doc_tests (slug)');
-        $this->addSql('CREATE TABLE doc_users (id INT NOT NULL, role_id SMALLINT NOT NULL, email VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, email_confirmation VARCHAR(255) DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE doc_users (id INT NOT NULL, role_id SMALLINT DEFAULT NULL, email VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, email_confirmation VARCHAR(255) DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE UNIQUE INDEX UNIQ_7B6AC8BFE7927C74 ON doc_users (email)');
-        $this->addSql('CREATE UNIQUE INDEX UNIQ_7B6AC8BFD60322AC ON doc_users (role_id)');
+        $this->addSql('CREATE INDEX IDX_7B6AC8BFD60322AC ON doc_users (role_id)');
         $this->addSql('ALTER TABLE doc_articles ADD CONSTRAINT FK_DE692C3389D45141 FOREIGN KEY (psychologist_profile_id) REFERENCES doc_psychologist_profiles (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE doc_client_profiles ADD CONSTRAINT FK_5D91274FA76ED395 FOREIGN KEY (user_id) REFERENCES doc_users (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE doc_client_profiles ADD CONSTRAINT FK_5D91274F7E7E34FA FOREIGN KEY (live_with_type_id) REFERENCES book_live_with_types (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
