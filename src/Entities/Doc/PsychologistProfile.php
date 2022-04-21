@@ -21,19 +21,19 @@ class PsychologistProfile
     private int $id;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private ?string $firstName;
+    private ?string $firstName = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private ?string $lastName;
+    private ?string $lastName = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private ?string $patronymic;
+    private ?string $patronymic = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private ?string $education;
+    private ?string $education = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private ?string $avatar;
+    private ?string $avatar = null;
 
     #[ORM\OneToOne(targetEntity: User::class)]
     private User $user;

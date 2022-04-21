@@ -2,7 +2,9 @@
 
 namespace App\Entities\Doc;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 #[ORM\Entity]
@@ -16,7 +18,7 @@ class Consultation
     #[ORM\Column(type: 'integer')]
     private int $id;
 
-    #[ORM\ManyToOne(targetEntity: PsychologistProfile::class)]
+    #[ORM\ManyToOne(targetEntity: PsychologistProfile::class, fetch: 'EAGER')]
     #[ORM\JoinColumn(nullable: true)]
     private ?PsychologistProfile $psychologistProfile;
 
@@ -35,12 +37,29 @@ class Consultation
     #[ORM\Column(type: 'string', length: 255)]
     private string $img;
 
+    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'consultation')]
+    private PersistentCollection|ArrayCollection $comments;
+
     public function __construct(string $title, string $description, float $price, string $img)
     {
         $this->setTitle($title);
         $this->setDescription($description);
         $this->setPrice($price);
         $this->setImg($img);
+
+        $this->comments = new ArrayCollection();
+    }
+
+    public function getComments(): PersistentCollection|ArrayCollection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): self
+    {
+        $this->comments->add($comment);
+
+        return $this;
     }
 
     /**

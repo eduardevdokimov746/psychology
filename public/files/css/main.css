@@ -3,6 +3,11 @@
     color: white !important;
 }
 
+.tab-pane{
+    background-color: white !important;
+    color: black !important;
+}
+
 .nav-link{
     color: #f05a66;
 }

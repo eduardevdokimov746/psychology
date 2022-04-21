@@ -16,6 +16,11 @@ class WorkType
     #[ORM\Column(type: 'string', length: 255, unique: true)]
     private string $name;
 
+    public function __construct(string $name)
+    {
+        $this->setName($name);
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -22,7 +22,6 @@ class RobotController extends AbstractController
     #[Route(path: '/', name: 'index')]
     public function index(): Response
     {
-        dd(slug('Заниженная самооценка, нелюбовь к себе, неприятие себя'));
         return $this->render('robot/index.html.twig');
     }
 
@@ -38,19 +37,19 @@ class RobotController extends AbstractController
         return $this->render($this->robotFactory->makeRobot($slug)->getResultLayout());
     }
 
-    #[Route(path: '/problems', name: 'problems')]
+    #[Route(path: '/problems', name: 'problems', priority: 1)]
     public function problems(): Response
     {
         return $this->render('robot/problems.html.twig');
     }
 
-    #[Route(path: '/research', name: 'research')]
+    #[Route(path: '/research', name: 'research', priority: 1)]
     public function showResearchForm(): Response
     {
         return $this->render('robot/research_form.html.twig');
     }
 
-    #[Route(path: '/research/result', name: 'research.result')]
+    #[Route(path: '/research/result', name: 'research.result', priority: 1)]
     public function showResearchResult(): Response
     {
         return $this->render('robot/research_result.html.twig');

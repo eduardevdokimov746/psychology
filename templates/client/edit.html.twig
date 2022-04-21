@@ -10,12 +10,19 @@
     <div class="col-3">
         {{ include('client/navbar.html.twig') }}
     </div>
-    <div class="col-9">
+    <form action="{{ url('client.update') }}" method="post" class="col-9">
 
         <div class="row mb-3">
             <label for="name" class="col-sm-3 col-form-label">Имя</label>
             <div class="col-sm-9">
-                <input type="text" class="form-control" id="name">
+                <input type="text" class="form-control" id="name" name="firstName" value="{{ user.clientProfile is not null ? user.clientProfile.firstName }}">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="name" class="col-sm-3 col-form-label">Фамилия</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="name" name="lastName" value="{{ user.clientProfile is not null ? user.clientProfile.lastName }}">
             </div>
         </div>
 
@@ -23,11 +30,11 @@
             <label for="name" class="col-sm-3 col-form-label">Пол</label>
             <div class="col-sm-9">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male" {{ user.clientProfile is not empty and user.clientProfile.gender.value == 'male' ? 'checked' }}>
                     <label class="form-check-label" for="inlineRadio1">мужской</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female" {{ user.clientProfile is not empty and user.clientProfile.gender.value == 'female' ? 'checked' }}>
                     <label class="form-check-label" for="inlineRadio2">женский</label>
                 </div>
             </div>
@@ -36,7 +43,7 @@
         <div class="row mb-3">
             <label for="birthday" class="col-sm-3 col-form-label">Дата рождения</label>
             <div class="col-sm-9">
-                <input type="date" class="form-control" id="birthday">
+                <input type="date" class="form-control" name="dateOfBirth" id="birthday" value="{{ user.clientProfile is not empty ? user.clientProfile.dateOfBirth|date('Y-m-d') }}">
             </div>
         </div>
 
@@ -48,11 +55,10 @@
             <label for="birthday" class="col-sm-3 col-form-label">С кем проживаете</label>
 
             <div class="col-sm-9">
-                <select class="form-select">
-                    <option selected>Другое</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select class="form-select" name="liveWithType">
+                    {% for liveWithType in liveWithTypes %}
+                        <option value="{{ liveWithType.id }}" {{ user.clientProfile is not null and user.clientProfile.liveWithType.id is same as liveWithType.id ? 'selected' }}>{{ liveWithType.name }}</option>
+                    {% endfor %}
                 </select>
             </div>
         </div>
@@ -61,11 +67,10 @@
             <label for="birthday" class="col-sm-3 col-form-label">Семейное положение</label>
 
             <div class="col-sm-9">
-                <select class="form-select">
-                    <option selected>Другое</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select class="form-select" name="martialStatus">
+                    {% for martialStatus in martialStatuses %}
+                        <option value="{{ martialStatus.id }}" {{ user.clientProfile is not null and user.clientProfile.martialStatus.id is same as martialStatus.id ? 'selected' }}>{{ martialStatus.name }}</option>
+                    {% endfor %}
                 </select>
             </div>
         </div>
@@ -74,11 +79,11 @@
             <label for="name" class="col-sm-3 col-form-label">Есть у вас дети?</label>
             <div class="col-sm-9">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <input class="form-check-input" type="radio" name="hasChildren" id="inlineRadio1" value="1" {{ user.clientProfile is not empty and user.clientProfile.hasChildren ? 'checked' }}>
                     <label class="form-check-label" for="inlineRadio1">да</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input class="form-check-input" type="radio" name="hasChildren" id="inlineRadio2" value="0" {{ user.clientProfile is not empty and not user.clientProfile.hasChildren ? 'checked' }}>
                     <label class="form-check-label" for="inlineRadio2">нет</label>
                 </div>
             </div>
@@ -88,11 +93,10 @@
             <label for="birthday" class="col-sm-3 col-form-label">Чем занимаетесь в жизни</label>
 
             <div class="col-sm-9">
-                <select class="form-select">
-                    <option selected>Другое</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select class="form-select" name="workType">
+                    {% for workType in workTypes %}
+                        <option value="{{ workType.id }}" {{ user.clientProfile is not null and user.clientProfile.workType.id is same as workType.id ? 'selected' }}>{{ workType.name }}</option>
+                    {% endfor %}
                 </select>
             </div>
         </div>
@@ -105,7 +109,7 @@
             <label for="birthday" class="col-sm-3 col-form-label">Вес</label>
             <div class="col-sm-9">
                 <div class="input-group mb-3">
-                    <input type="number" class="form-control" min="30">
+                    <input type="number" class="form-control" name="weight" min="30" value="{{ user.clientProfile is not null ? user.clientProfile.weight }}">
                     <span class="input-group-text" id="basic-addon2">кг</span>
                 </div>
             </div>
@@ -115,16 +119,16 @@
             <label for="birthday" class="col-sm-3 col-form-label">Рост</label>
             <div class="col-sm-9">
                 <div class="input-group mb-3">
-                    <input type="number" class="form-control" min="80">
+                    <input type="number" class="form-control" name="height" min="80" value="{{ user.clientProfile is not null ? user.clientProfile.height }}">
                     <span class="input-group-text" id="basic-addon2">см</span>
                 </div>
             </div>
         </div>
 
         <div class="d-flex justify-content-end md-3">
-            <button class="btn btn-primary">Сохранить</button>
+            <button class="btn btn-primary" type="submit">Сохранить</button>
         </div>
-    </div>
+    </form>
 </div>
 
 {% endblock %}

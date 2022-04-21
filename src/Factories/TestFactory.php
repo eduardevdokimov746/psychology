@@ -15,12 +15,12 @@ class TestFactory
     public static function makeTest(string $slug): Test
     {
         return match ($slug) {
-            'opredelenie-podhodasej-professii' => new ProfOrientation(),
-            'veroatnost-suicida' => new Veroyatnost(),
-            'obsessivno-kompulsivnogo-rasstrojstva' => new Okr(),
-            'nalicie-obsessivno-kompulsivnogo-rasstrojstva' => new AvailabilityOkr(),
-            'trevoznost-spilbergera-hanina' => new Anxiety(),
-            '30-poslovic-strategia-vasego-povedenia-v-konflikte' => new Saying()
+            'opredelenie-podhodasej-professii' => new ProfOrientation($slug),
+            'veroatnost-suicida' => new Veroyatnost($slug),
+            'obsessivno-kompulsivnogo-rasstrojstva' => new Okr($slug),
+            'nalicie-obsessivno-kompulsivnogo-rasstrojstva' => new AvailabilityOkr($slug),
+            'trevoznost-spilbergera-hanina' => new Anxiety($slug),
+            '30-poslovic-strategia-vasego-povedenia-v-konflikte' => new Saying($slug)
         };
     }
 }

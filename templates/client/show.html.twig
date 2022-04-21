@@ -13,49 +13,85 @@
     <div class="col-9">
         <p>
             <b>Имя:</b>
-            Евдокимов Эдуард
+            {% if user.clientProfile.lastName is not null and user.clientProfile.firstName %}
+                {{ user.clientProfile.lastName }} {{ user.clientProfile.firstName }} {{ user.clientProfile.patronymic }}
+            {% else %}
+                &mdash;
+            {% endif %}
         </p>
         <p>
             <b>Пол:</b>
-            мужской
+            {% if user.clientProfile is not null and user.clientProfile.gender is not null %}
+                {{ user.clientProfile.gender is same as 'male' ? 'мужчина' : 'женщина'}}
+            {% else %}
+                &mdash;
+            {% endif %}
         </p>
         <p>
             <b>Дата рождения:</b>
-            22.02.2022
+            {% if user.clientProfile is not null %}
+                {{ user.clientProfile.dateOfBirth|date('Y-m-d') }}
+            {% else %}
+                &mdash;
+            {% endif %}
         </p>
         <p>
             <b>E-mail:</b>
-            test@mail.com
+            {{ user.email }}
         </p>
 
         <h4 class="text-center">Психологические данные</h4>
 
         <p>
             <b>С кем проживаете:</b>
-            с рыбками
+            {% if user.clientProfile is not null and user.clientProfile.liveWithType is not null %}
+                {{ user.clientProfile.liveWithType.name }}
+            {% else %}
+                &mdash;
+            {% endif %}
         </p>
         <p>
             <b>Семейное положение:</b>
-            вольный художник
+            {% if user.clientProfile is not null and user.clientProfile.martialStatus is not null %}
+                {{ user.clientProfile.martialStatus.name }}
+            {% else %}
+                &mdash;
+            {% endif %}
         </p>
         <p>
             <b>Дети:</b>
-            мальчик и мальчик
+            {% if user.clientProfile is not null %}
+                {{ user.clientProfile.hasChildren ? 'да' : 'нет' }}
+            {% else %}
+                &mdash;
+            {% endif %}
         </p>
         <p>
             <b>Чем занимаетесь в жизни:</b>
-            бутеры ем
+            {% if user.clientProfile is not null and user.clientProfile.workType is not null %}
+                {{ user.clientProfile.workType.name }}
+            {% else %}
+                &mdash;
+            {% endif %}
         </p>
 
         <h4 class="text-center">Медицинские данные</h4>
 
         <p>
             <b>Вес:</b>
-            80
+            {% if user.clientProfile.weight is not null %}
+                {{ user.clientProfile.weight }} кг
+            {% else %}
+                &mdash;
+            {% endif %}
         </p>
         <p>
             <b>Рост:</b>
-            188
+            {% if user.clientProfile.height is not null %}
+                {{user.clientProfile.height}} см
+            {% else %}
+                &mdash;
+            {% endif %}
         </p>
     </div>
 </div>

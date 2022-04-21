@@ -26,8 +26,29 @@ class User
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private string $email_confirmation;
 
-    #[ORM\ManyToOne(targetEntity: Role::class)]
+    #[ORM\ManyToOne(targetEntity: Role::class, cascade: ['persist'])]
     private Role $role;
+
+    #[ORM\OneToOne(targetEntity: ClientProfile::class, mappedBy: 'user', fetch: 'EAGER', cascade: ['persist'])]
+    private ?ClientProfile $clientProfile = null;
+
+    /**
+     * @return ClientProfile
+     */
+    public function getClientProfile(): ?ClientProfile
+    {
+        return $this->clientProfile;
+    }
+
+    /**
+     * @param ClientProfile $clientProfile
+     */
+    public function setClientProfile(ClientProfile $clientProfile): void
+    {
+        $clientProfile->setUser($this);
+
+        $this->clientProfile = $clientProfile;
+    }
 
     public function __construct(string $email, string $password, Role $role)
     {

@@ -11,12 +11,12 @@ class GenderType extends Type
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
         /** @var Gender $value */
-        return $value->value;
+        return !is_null($value) ? $value->value : null;
     }
 
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
-        return Gender::from($value);
+        return Gender::tryFrom($value);
     }
 
     public function getSQLDeclaration(array $column, AbstractPlatform $platform)

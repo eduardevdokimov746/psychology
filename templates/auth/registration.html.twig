@@ -5,15 +5,31 @@
 {% endblock %}
 
 {% block content %}
-<form class="col-5 container">
+<form method="post" action="{{ url('register')}}" class="col-5 container">
+
+    {% if app.request.session.has('email_exists') %}
+        <div class="alert alert-danger" role="alert">
+            Пользователь с таким email уже зарегистрирован
+        </div>
+
+        {% do app.request.session.remove('email_exists') %}
+    {% endif %}
+
+    {% if app.request.session.has('password_lenght') %}
+        <div class="alert alert-danger" role="alert">
+            Пароль должен содержать более 3 символов
+        </div>
+
+        {% do app.request.session.remove('password_lenght') %}
+    {% endif %}
 
     <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="E-mail">
+        <input type="email" class="form-control" name="email" required id="floatingInput" placeholder="E-mail">
         <label for="floatingInput">E-mail</label>
     </div>
 
     <div class="form-floating mt-2">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
+        <input type="password" class="form-control" name="password" required id="floatingPassword" placeholder="Пароль">
         <label for="floatingPassword">Пароль</label>
     </div>
 

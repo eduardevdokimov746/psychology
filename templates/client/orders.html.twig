@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+    Ваши заказы
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-3">
+            {{ include('client/navbar.html.twig') }}
+        </div>
+
+        <div class="col-9">
+            {% if orders is empty %}
+                <h4>У вас нет оформленных заказов</h4>
+            {% else %}
+                <table class="table table-striped text-center">
+                    <thead>
+                        <tr>
+                            <td>№</td>
+                            <td>Номер заказа</td>
+                            <td>Количество товаров</td>
+                            <td>Сумма</td>
+                            <td>Дата оформления</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ order.uniqueNumber }}</td>
+                                <td>{{ order.orderItems|length }}</td>
+                                <td>{{ order.sum }} руб</td>
+                                <td>{{ order.createdAt|date('h:i d.m.Y')}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+

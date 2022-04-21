@@ -13,15 +13,15 @@
             >Редактировать профиль</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Мои робот-психолог</a>
+        <a class="nav-link" href="#">Робот-психолог</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Мои тесты</a>
+        <a class="nav-link {{ 'tests' in app.request.requestUri ? 'active' }}" href="{{ url('client.tests') }}">Пройденные тесты</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Покупки</a>
+        <a class="nav-link {{ 'orders' in app.request.requestUri ? 'active' }}" href="{{ url('client.orders') }}">Оформленные заказы</a>
     </li>
     <li class="nav-item mt-3">
-        <a class="btn btn-primary w-100" href="#">Выйти</a>
+        <a class="btn btn-primary w-100" href="{{ url('logout') }}">Выйти</a>
     </li>
 </ul>

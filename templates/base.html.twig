@@ -1,76 +1,94 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}{{ app_name }}{% endblock %}</title>
-        <link rel="icon" href="{{ absolute_url(asset('files/images/favicon.ico')) }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ app_name }}{% endblock %}</title>
+    <link rel="icon" href="{{ absolute_url(asset('files/images/favicon.ico')) }}">
 
-        {% block styles %}
-            <link rel="stylesheet" href="{{ absolute_url(asset('files/css/bootstap5.css')) }}">
-            <link rel="stylesheet" href="{{ absolute_url(asset('files/css/fontawesome6.css')) }}">
-            <link rel="stylesheet" href="{{ absolute_url(asset('files/css/main.css')) }}">
-        {% endblock %}
-    </head>
-    <body>
-        <div class="container">
+    {% block styles %}
+        <link rel="stylesheet" href="{{ absolute_url(asset('files/css/bootstap5.css')) }}">
+        <link rel="stylesheet" href="{{ absolute_url(asset('files/css/fontawesome6.css')) }}">
+        <link rel="stylesheet" href="{{ absolute_url(asset('files/css/main.css')) }}">
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    <div id="footer-bottom">
+        <header class="mt-3">
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-3 border-bottom">
+                <a href="{{ url('consultations.index') }}"
+                   class="d-flex align-items-center text-dark text-decoration-none">
+                    <img width="50" src="{{ absolute_url(asset('files/images/logo.jpg')) }}" alt="logo">
+                    <h1 class="">{{ app_name }}</h1>
+                </a>
 
-            <header class="mt-3">
-                <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-3 border-bottom">
-                    <a href="{{ url('consultations.index') }}" class="d-flex align-items-center text-dark text-decoration-none">
-                        <img width="50" src="{{ absolute_url(asset('files/images/logo.jpg')) }}" alt="logo">
-                        <h1 class="">{{ app_name }}</h1>
-                    </a>
-
-                    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                        <a class="top-nav-item me-2" href="{{ url('showAuthForm') }}"><i class="fa-solid fa-user"></i></a>
-                        {# <a class="top-nav-item me-2" href="{{ url('client.show') }}"><i class="fa-solid fa-user"></i></a> #}
-                        <a class="top-nav-item" href="{{ url('cart.index') }}"><i class="fa-solid fa-basket-shopping"></i></a>
-                    </nav>
-                </div>
-            </header>
-            <p></p>
-            <nav class="nav nav-pills nav-fill mb-3">
-                <a class="nav-link {{ 'consultations' in app.request.requestUri ? 'active' }}" aria-current="page" href="{{ url('consultations.index') }}">Консультации</a>
-                <a class="nav-link {{ 'robot-psychologist' in app.request.requestUri ? 'active' }}" href="{{ url("robot.index") }}">Робот-психолог</a>
-                <a class="nav-link {{ 'tests' in app.request.requestUri ? 'active' }}" href="{{ url("tests.index") }}">Тесты</a>
-                <a class="nav-link {{ 'affirmation' in app.request.requestUri ? 'active' }}" href="{{ url('affirmation') }}">Аффирмация дня</a>
-                <a class="nav-link {{ 'articles' in app.request.requestUri ? 'active' }}" href="{{ url('articles.index') }}">Статьи</a>
-            </nav>
-
-            <h2 class="text-center">{% block content_title %}{% endblock %}</h2>
-
-            <div class="container-fluid bg-3 mt-3">
-                {% block content %}{% endblock %}
-            </div>
-
-            <footer class="container-fluid text-center border-top mt-5">
-                <nav class="navbar navbar-expand-md navbar-custom">
-                    <div class="container">
-
-                        <div class="collapse navbar-collapse">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('info.faq') }}">Помощь</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('info.about') }}">О программе</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <span>Дипломный проект Радченко В.С.</span>
-                        </div>
-                    </div>
+                <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                    {% if app.request.session.has('auth') %}
+                        <a class="top-nav-item me-2" href="{{ url('client.show') }}"><i
+                                    class="fa-solid fa-user"></i></a>
+                    {% else %}
+                        <a class="top-nav-item me-2" href="{{ url('showAuthForm') }}"><i
+                                    class="fa-solid fa-user"></i></a>
+                    {% endif %}
+                    <a class="top-nav-item" href="{{ url('cart.index') }}"><i
+                                class="fa-solid fa-basket-shopping"></i></a>
                 </nav>
-            </footer>
-        </div>
+            </div>
+        </header>
+        <p></p>
+        <nav class="nav nav-pills nav-fill mb-3">
+            <a class="nav-link {{ 'consultations' in app.request.requestUri ? 'active' }}" aria-current="page"
+               href="{{ url('consultations.index') }}">Консультации</a>
+            <a class="nav-link {{ 'robot-psychologist' in app.request.requestUri ? 'active' }}"
+               href="{{ url("robot.index") }}">Робот-психолог</a>
+            <a class="nav-link {{ app.request.requestUri|trim('/') is same as 'tests' ? 'active' }}"
+               href="{{ url("tests.index") }}">Тесты</a>
+            <a class="nav-link {{ 'affirmation' in app.request.requestUri ? 'active' }}"
+               href="{{ url('affirmation') }}">Аффирмация дня</a>
+            <a class="nav-link {{ 'articles' in app.request.requestUri ? 'active' }}"
+               href="{{ url('articles.index') }}">Статьи</a>
+        </nav>
 
-        {% block scripts %}
-            <script src="{{ absolute_url(asset('files/js/bootstap5.js')) }}"></script>
-            <script src="{{ absolute_url(asset('files/js/fontawesome6.js')) }}"></script>
-            <script src="{{ absolute_url(asset('files/js/jquery.js')) }}"></script>
-        {% endblock %}
-    </body>
+        <h2 class="text-center">{% block content_title %}{% endblock %}</h2>
+
+        <div class="container-fluid bg-3 mt-3">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <footer class="container-fluid text-center border-top mt-5">
+        <nav class="navbar navbar-expand-md navbar-custom">
+            <div class="container">
+
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('info.faq') }}">Помощь</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('info.about') }}">О программе</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <span>Дипломный проект Радченко В.С.</span>
+                </div>
+            </div>
+        </nav>
+    </footer>
+</div>
+
+{% block scripts %}
+    <script src="{{ absolute_url(asset('files/js/bootstap5.js')) }}"></script>
+    <script src="{{ absolute_url(asset('files/js/fontawesome6.js')) }}"></script>
+    <script src="{{ absolute_url(asset('files/js/jquery.js')) }}"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#footer-bottom').css('min-height', $(window).height() - 130);
+        })
+    </script>
+{% endblock %}
+</body>
 </html>

@@ -16,6 +16,14 @@ class LiveWithTypes
     #[ORM\Column(type: 'string', length: 255, unique: true)]
     private string $name;
 
+    /**
+     * @param string $name
+     */
+    public function __construct(string $name)
+    {
+        $this->setName($name);
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -5,15 +5,23 @@
 {% endblock %}
 
 {% block content %}
-<form class="col-5 container">
+<form class="col-5 container" method="post" action="{{ url('login') }}">
+
+    {% if app.request.session.has('auth_error') %}
+        <div class="alert alert-danger" role="alert">
+            Не верно введен email или пароль
+        </div>
+
+        {% do app.request.session.remove('auth_error') %}
+    {% endif %}
 
     <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="E-mail">
+        <input type="email" class="form-control" id="floatingInput" placeholder="E-mail" name="email" required>
         <label for="floatingInput">E-mail</label>
     </div>
 
     <div class="form-floating mt-2">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Пароль" name="password" required>
         <label for="floatingPassword">Пароль</label>
     </div>
 

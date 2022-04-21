@@ -1,57 +1,60 @@
 {% extends "base.html.twig" %}
 
 {% block content_title %}
-Корзина
+    Корзина
 {% endblock %}
 
 {% block content %}
-<table class="table table-striped text-center">
-    <thead>
-        <tr>
-            <th scope="col">№</th>
-            <th scope="col">Название</th>
-            <th scope="col">Психолог</th>
-            <th scope="col">Продолжительность</th>
-            <th scope="col">Цена</th>
-            <th scope="col">Удалить</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Консультация по видео</td>
-            <td>Юлия Свиридова</td>
-            <td>60 мин</td>
-            <td>2300 руб</td>
-            <td><button class="btn btn-primary btn-sm"><i class="fa-solid fa-trash"></i></button></td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Консультация по видео</td>
-            <td>Юлия Свиридова</td>
-            <td>60 мин</td>
-            <td>2300 руб</td>
-            <td><button class="btn btn-primary btn-sm"><i class="fa-solid fa-trash"></i></button></td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Консультация по видео</td>
-            <td>Юлия Свиридова</td>
-            <td>60 мин</td>
-            <td>2300 руб</td>
-            <td><button class="btn btn-primary btn-sm"><i class="fa-solid fa-trash"></i></button></td>
-        </tr>
-        <tr style="background-color: #ff818b; color: white;">
-            <th scope="row" colspan="2">Итого к оплате</th>
-            <td></td>
-            <td></td>
-            <td>2300 руб</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+    {% if app.session.has('cart') and app.session.get('cart') is not empty %}
+        <table class="table table-striped text-center">
+            <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Название</th>
+                <th scope="col">Психолог</th>
+                <th scope="col">Продолжительность</th>
+                <th scope="col">Цена</th>
+                <th scope="col">Удалить</th>
+            </tr>
+            </thead>
+            <tbody>
 
-<div class="d-flex justify-content-end">
-    <a class="btn btn-primary" href="{{ url('cart.order') }}">Оформить заказ</a>
-</div>
+            {% for id,cartItem in app.session.get('cart') %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ cartItem.title }}</td>
+                    {% if cartItem.psychologistProfile.firstName is not null or cartItem.psychologistProfile.lastName is not null %}
+                        <td>{{ cartItem.psychologistProfile.firstName }} {{ cartItem.psychologistProfile.lastName }}</td>
+                    {% else %}
+                        <td>&mdash;</td>
+                    {% endif %}
+                    <td>{{ cartItem.duration is not null ? cartItem.duration ~ ' мин' : '&mdash;' }}</td>
+                    <td>{{ cartItem.price }} руб</td>
+                    <td>
+                        <form action="{{ url('cart.delete') }}" method="post">
+                            <input type="hidden" name="consultation" value="{{ id }}">
+                            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-solid fa-trash"></i></button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+
+            <tr style="background-color: #ff818b; color: white;">
+                <th scope="row" colspan="2">Итого к оплате</th>
+                <td></td>
+                <td></td>
+                <td>{{ app.session.get('cart')|reduce((sum, item) => item.price + sum) }}руб</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    {% else %}
+        <h5>Корзина пуста</h5>
+    {% endif %}
+
+    {% if app.session.has('cart') and app.session.get('cart') is not empty %}
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-primary" href="{{ url('cart.order') }}">Оформить заказ</a>
+        </div>
+    {% endif %}
 {% endblock %}

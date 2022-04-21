@@ -1,66 +1,59 @@
 {% extends "base.html.twig" %}
 
 {% block content_title %}
-Оформление заказа
+    Оформление заказа
 {% endblock %}
 
 {% block content %}
-<div class="col-10 container">
-<table class="table table-striped text-center">
-    <thead>
-        <tr>
-            <th scope="col">№</th>
-            <th scope="col">Название</th>
-            <th scope="col">Психолог</th>
-            <th scope="col">Продолжительность</th>
-            <th scope="col">Цена</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Консультация по видео</td>
-            <td>Юлия Свиридова</td>
-            <td>60 мин</td>
-            <td>2300 руб</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Консультация по видео</td>
-            <td>Юлия Свиридова</td>
-            <td>60 мин</td>
-            <td>2300 руб</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Консультация по видео</td>
-            <td>Юлия Свиридова</td>
-            <td>60 мин</td>
-            <td>2300 руб</td>
-        </tr>
-        <tr style="background-color: #ff818b; color: white;">
-            <th scope="row" colspan="2">Итого к оплате</th>
-            <td></td>
-            <td></td>
-            <td>2300 руб</td>
-        </tr>
-    </tbody>
-</table>
+    <div class="col-10 container">
+        <table class="table table-striped text-center">
+            <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Название</th>
+                <th scope="col">Психолог</th>
+                <th scope="col">Продолжительность</th>
+                <th scope="col">Цена</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for id,cartItem in app.session.get('cart') %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ cartItem.title }}</td>
+                    {% if cartItem.psychologistProfile.firstName is not null or cartItem.psychologistProfile.lastName is not null %}
+                        <td>{{ cartItem.psychologistProfile.firstName }} {{ cartItem.psychologistProfile.lastName }}</td>
+                    {% else %}
+                        <td>&mdash;</td>
+                    {% endif %}
+                    <td>{{ cartItem.duration is not null ? cartItem.duration ~ ' мин' : '&mdash;' }}</td>
+                    <td>{{ cartItem.price }} руб</td>
+                </tr>
+            {% endfor %}
 
+            <tr style="background-color: #ff818b; color: white;">
+                <th scope="row" colspan="2">Итого к оплате</th>
+                <td></td>
+                <td></td>
+                <td>{{ app.session.get('cart')|reduce((sum, item) => item.price + sum) }}руб</td>
+            </tr>
+            </tbody>
+        </table>
 
+        <div class="col-6 text-center container">
+            <p>
+                Укажите вашу почту, по которой мы сможем связаться с вами после оплаты. Или войдите в личный кабинет,
+                тогда вся информация об оплате будет сохранена в нем.
+            </p>
 
-<div class="col-6 text-center container">
-    <p>
-        Укажите вашу почту, по которой мы сможем связаться с вами после оплаты. Или войдите в личный кабинет, тогда вся информация об оплате будет сохранена в нем.
-    </p>
-    <form action="{{ url('cart.payment') }}" method="POST">
-        <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="E-mail">
-            <label for="floatingInput">E-mail</label>
+            <form action="{{ url('cart.payment') }}" method="POST">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" name="email" value="{{ app.session.get('auth') is not null ? app.session.get('auth').email }}" placeholder="E-mail">
+                    <label for="floatingInput">E-mail</label>
+                </div>
+
+                <button class="btn btn-primary mt-3" type="submit">Перейти к оплате</button>
+            </form>
         </div>
-
-        <button class="btn btn-primary mt-3" type="submit">Перейти к оплате</button>
-    </form>
-</div>
-</div>
+    </div>
 {% endblock %}

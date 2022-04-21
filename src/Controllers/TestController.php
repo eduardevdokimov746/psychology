@@ -53,16 +53,19 @@ class TestController extends AbstractController
     #[Route(path: '/{slug}', name: 'show')]
     public function show(string $slug): Response
     {
-        $testTitle = 'Тест 30 пословиц. Стратегия вашего поведения в конфликте (для подростков)';
-
-        // dd(slug('тревожность Спилбергера Ханина'));
-
-        return $this->render($this->testFactory->makeTest($slug)->getContentLayout());
+        return $this->render($this->testFactory->makeTest($slug)->getContentLayout(), ['slug' => $slug]);
     }
 
     #[Route(path: '/{slug}/result', name: 'result', priority: 1)]
-    public function showResult(string $slug): Response
+    public function showResult(string $slug, Request $request): Response
     {
-        return $this->render($this->testFactory->makeTest($slug)->getResultLayout());
+        $test = $this->testFactory->makeTest($slug);
+
+        $result = $test->getPayload();
+
+        if ($request->getSession()->has('auth'))
+            $test->save($result, $this->entityManager, $request->getSession()->get('auth'));
+
+        return $this->render($test->getResultLayout(), $result);
     }
 }

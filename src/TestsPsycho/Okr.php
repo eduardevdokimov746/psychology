@@ -2,10 +2,23 @@
 
 namespace App\TestsPsycho;
 
+use App\Entities\Doc\TestResult;
+use App\Entities\Doc\User;
 use App\Interfaces\Test;
+use Doctrine\ORM\EntityManagerInterface;
 
 class Okr implements Test
 {
+    protected string $slug;
+
+    /**
+     * @param string $slug
+     */
+    public function __construct(string $slug)
+    {
+        $this->slug = $slug;
+    }
+
     public function getContentLayout(): string
     {
         return 'tests/layouts/okr/content.html.twig';
@@ -16,7 +29,22 @@ class Okr implements Test
         return 'tests/layouts/okr/result.html.twig';
     }
 
-    public function save()
+    public function getPayload(): array
     {
+        return [
+            'slug' => $this->slug,
+            'percent' => mt_rand(10, 65)
+        ];
+    }
+
+    public function save(mixed $data, EntityManagerInterface $entityManager, User $user)
+    {
+        $test = $entityManager->getRepository('Doc:Test')->findOneBy(['slug' => $this->slug]);
+
+        $testResult = new TestResult($test, $user->getClientProfile(), $data);
+
+        $entityManager->persist($testResult);
+
+        $entityManager->flush();
     }
 }

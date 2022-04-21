@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20220419085439 extends AbstractMigration
+final class Version20220420170702 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -81,7 +81,7 @@ final class Version20220419085439 extends AbstractMigration
         $this->addSql('CREATE INDEX IDX_D20D77DA5CAE2FF9 ON doc_robot_steps (client_profile_id)');
         $this->addSql('CREATE TABLE doc_robots (id SMALLINT NOT NULL, title VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, preview_img VARCHAR(255) NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE UNIQUE INDEX UNIQ_3ED6DFB8989D9B62 ON doc_robots (slug)');
-        $this->addSql('CREATE TABLE doc_test_results (id BIGINT NOT NULL, test_id SMALLINT DEFAULT NULL, client_profile_id INT DEFAULT NULL, data JSON NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE doc_test_results (id BIGINT NOT NULL, test_id SMALLINT DEFAULT NULL, client_profile_id INT DEFAULT NULL, data JSON NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE INDEX IDX_F10CB22E1E5D0459 ON doc_test_results (test_id)');
         $this->addSql('CREATE INDEX IDX_F10CB22E5CAE2FF9 ON doc_test_results (client_profile_id)');
         $this->addSql('CREATE TABLE doc_tests (id SMALLINT NOT NULL, title VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, preview_img VARCHAR(255) NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');

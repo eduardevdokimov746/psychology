@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Entities\Doc\Comment;
+use App\Entities\Doc\Consultation;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use loophp\collection\Contract\Operation\Sortable;
@@ -49,14 +51,16 @@ class ConsultationController extends AbstractController
     }
 
     #[Route(path: '/{consultation<\d+>}', name: 'show')]
-    public function show(int $consultation): Response
+    public function show(Request $request, int $consultation): Response
     {
         $consultation = $this->entityManager->getRepository('Doc:Consultation')
             ->createQueryBuilder('c')
-            ->addSelect('pp, wp, dwp')
+            ->addSelect('pp, wp, dwp, com, comclient')
             ->leftJoin('c.psychologistProfile', 'pp')
             ->leftJoin('pp.workWithProblems', 'wp')
             ->leftJoin('pp.dontWorkWithProblems', 'dwp')
+            ->leftJoin('c.comments', 'com')
+            ->leftJoin('com.clientProfile', 'comclient')
             ->where('c.id = :id')
             ->setParameter('id', $consultation)
             ->getQuery()
@@ -68,5 +72,28 @@ class ConsultationController extends AbstractController
                 'consultation' => $consultation
             ]
         );
+    }
+
+    #[Route(path: '/{consultation<\d+>}/add-comment', name: 'addComment', methods: ['POST'])]
+    public function addComment(Request $request, int $consultation): Response
+    {
+
+        /** @var Consultation $consultationObj */
+        $consultationObj = $this->entityManager->getRepository('Doc:Consultation')->find($consultation);
+        $clientProfile = $this->entityManager->getRepository('Doc:ClientProfile')->find($request->getSession()->get('auth')->getClientProfile()->getId());
+        $comment = new Comment(
+            $clientProfile,
+            $consultationObj,
+            $request->request->get('comment')
+        );
+
+        $this->entityManager->persist($comment);
+
+        $consultationObj->addComment($comment);
+
+
+        $this->entityManager->flush();
+
+        return $this->redirectToRoute('consultations.show', ['consultation' => $consultation]);
     }
 }
