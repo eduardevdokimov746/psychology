@@ -6,59 +6,24 @@
 {% endblock %}
 
 {% block robot_content %}
+    <div class="mt-4">
+        <h5>Выберите одну проблему, которую вы хотели бы обсудить с нашим ботом-психологом.</h4>
+    </div>
 
-<div class="mt-4">
-    <h5>Выберите одну проблему, которую вы хотели бы обсудить с нашим ботом-психологом.</h4>
-</div>
-
-<div class="row">
-    <div class="col-sm-3">
-        <div class="grid">
-            <figure class="effect-ming">
-                <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" alt="img08"/>
-                <figcaption>
-                    <h4>5 шагов чтобы разлюбить</h4>
-                    <p>читать</p>
-                    <a href="#">View more</a>
-                </figcaption>
-            </figure>
-        </div>
+    <div class="row">
+        {% for robot in robots %}
+            <div class="col-sm-3">
+                <div class="grid">
+                    <figure class="effect-ming">
+                        <img src="{{ absolute_url(asset('files/' ~ robot.previewImg)) }}" alt="img08"/>
+                        <figcaption>
+                            <h4>{{ robot.title }}</h4>
+                            <p>перейти</p>
+                            <a href="{{ url('robot.show', {slug: robot.slug}) }}">View more</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        {% endfor %}
     </div>
-    <div class="col-sm-3" style="">
-        <div class="grid">
-            <figure class="effect-ming">
-                <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" alt="img08"/>
-                <figcaption>
-                    <h4>Линии бесплатной психологической помощи (список)</h4>
-                    <p>читать</p>
-                    <a href="#">View more</a>
-                </figcaption>
-            </figure>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="grid">
-            <figure class="effect-ming">
-                <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" alt="img08"/>
-                <figcaption>
-                    <h4>Гипноз: опасно ли работать с подсознанием?</h4>
-                    <p>читать</p>
-                    <a href="#">View more</a>
-                </figcaption>
-            </figure>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="grid">
-            <figure class="effect-ming">
-                <img src="{{ absolute_url(asset('files/images/consultations/korostileva.png')) }}" alt="img08"/>
-                <figcaption>
-                    <h4>Субличности. Причины психологических проблем</h4>
-                    <p>читать</p>
-                    <a href="#">View more</a>
-                </figcaption>
-            </figure>
-        </div>
-    </div>
-</div>
 {% endblock %}

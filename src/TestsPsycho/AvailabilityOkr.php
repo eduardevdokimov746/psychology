@@ -41,7 +41,9 @@ class AvailabilityOkr implements Test
     {
         $test = $entityManager->getRepository('Doc:Test')->findOneBy(['slug' => $this->slug]);
 
-        $testResult = new TestResult($test, $user->getClientProfile(), $data);
+        $clientProfile = $entityManager->getRepository('Doc:ClientProfile')->find($user->getClientProfile());
+
+        $testResult = new TestResult($test, $clientProfile, $data);
 
         $entityManager->persist($testResult);
 

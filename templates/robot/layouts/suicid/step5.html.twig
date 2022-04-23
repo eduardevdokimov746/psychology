@@ -1,0 +1,83 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+    Безответная любовь
+{% endblock %}
+
+{% block content %}
+    <p class="text-center">
+        После расставания с любимым парнем или девушкой, мужем или женой, каждый из нас испытывает боль. И не важно,
+        было ли решение обоюдным, или кто-то бросил партнера. Пережить расставание с любимым человеком вам поможет наша
+        программа робота-психолога. Кроме этого, если вы испытываете безответную любовь к парню или девушке, мечтаете
+        разлюбить, забыть и отпустить этого человека, прохождение данной программы будет для вас очень полезным.
+    </p>
+    <hr>
+
+    <h4>Шаг 5</h4>
+    <p class="text-center">
+        Хорошо, user. А теперь нужно сделать вторую часть этого упражнения. Теперь к каждой вашей ситуации нужно
+        написать,
+        какие Ваши действия или способности привели вас к ней. Как вы способствовали этому результату?
+    </p>
+
+    <div>
+        <h5>Мои проблемные ситуации:</h5>
+
+        <p style="text-indent: 25px">
+            Например: "У меня нет друзей, я одинок" - "Я оттолкнул единственного друга, я редко выхожу из дома, я
+            отказываюсь от отдыха в незнакомых компаниях, я везде нахожусь один".
+        </p>
+
+        <p class="align-items-center w-25">
+            <label class="d-flex">1. <input class="ms-1 form-control form-control-sm"></label>
+        </p>
+
+        <p class="align-items-center w-25">
+            <label class="d-flex">2. <input class="ms-1 form-control form-control-sm"></label>
+        </p>
+
+        <p class="align-items-center w-25">
+            <label class="d-flex">3. <input class="ms-1 form-control form-control-sm"></label>
+        </p>
+
+        <p class="align-items-center w-25">
+            <label class="d-flex">4. <input class="ms-1 form-control form-control-sm"></label>
+        </p>
+
+        <p class="align-items-center w-25">
+            <label class="d-flex">5. <input class="ms-1 form-control form-control-sm"></label>
+        </p>
+    </div>
+
+    <div>
+        <h5>Мои успешные ситуации:</h5>
+
+        <p style="text-indent: 25px">
+            Например: "Я хорошо учился в школе" - "Я целеустремленный, у меня были хорошие отношения с преподавателями.".
+        </p>
+
+        <p class="align-items-center w-25">
+            <label class="d-flex">1. <input class="ms-1 form-control form-control-sm"></label>
+        </p>
+
+        <p class="align-items-center w-25">
+            <label class="d-flex">2. <input class="ms-1 form-control form-control-sm"></label>
+        </p>
+
+        <p class="align-items-center w-25">
+            <label class="d-flex">3. <input class="ms-1 form-control form-control-sm"></label>
+        </p>
+
+        <p class="align-items-center w-25">
+            <label class="d-flex">4. <input class="ms-1 form-control form-control-sm"></label>
+        </p>
+
+        <p class="align-items-center w-25">
+            <label class="d-flex">5. <input class="ms-1 form-control form-control-sm"></label>
+        </p>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-primary" href="{{ url('robot.show', {slug: slug, step: 'step6'}) }}">Далее</a>
+    </div>
+{% endblock %}

@@ -13,7 +13,7 @@
             >Редактировать профиль</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Робот-психолог</a>
+        <a class="nav-link {{ 'robots' in app.request.requestUri ? 'active' }}" href="{{ url('client.robots') }}">Робот-психолог</a>
     </li>
     <li class="nav-item">
         <a class="nav-link {{ 'tests' in app.request.requestUri ? 'active' }}" href="{{ url('client.tests') }}">Пройденные тесты</a>

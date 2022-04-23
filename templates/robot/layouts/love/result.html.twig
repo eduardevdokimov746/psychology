@@ -1,0 +1,336 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+    Заниженная самооценка, нелюбовь к себе, неприятие себя
+{% endblock %}
+
+{% block content %}
+    <p class="text-center">
+        Вопросы о том, как повысить самооценку и уверенность в себе волнуют многих. К сожалению, в современном мире
+        очень много людей страдает проблемой заниженной самооценки. Низкая самооценка приводит к проблемам во всех
+        сферах жизни: любовных отношениях, работе, учебе, отношениях с друзьями и семьей. Формирование самооценки - это
+        важная задача не только для школьников, но и для взрослых людей, страдающих такой проблемой. Повышенная
+        самооценка, как правило, не доставляет таких сильных проблем человеку, как пониженная. Повысить самооценку можно
+        с помощью нашей программы робота-психолога онлайн совершенно бесплатно.
+    </p>
+    <hr>
+    <h4>Рекомендации робота-психолога</h4>
+
+    <h5 class="text-center mb-3">Этап 1</h5>
+
+    <div class="accordion" id="accordion1">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button collapsed d-flex justify-content-between" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                    <span>Сотрите все воспоминания</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                 aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                    Выбросьте фото, удалите SMS, не ходите в те места, где вы можете встретиться… Как говорится, с глаз
+                    долой – из сердца вон. Если у вас есть общие друзья, то стоит на время ограничить контакты с ними,
+                    по крайней мере, до тех пор, пока не переболит... Иногда важно проявить здоровый эгоизм, тем самым
+                    сохранив в порядке свои нервы и самочувствие.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <a href="{{ url('tests.show', {slug: 'trevoznost-spilbergera-hanina'}) }}"
+                   class="link accordion-button collapsed"
+                   data-bs-target="#panelsStayOpen-collapseOne1" aria-expanded="true"
+                   aria-controls="panelsStayOpen-collapseOne1">
+                    <span>Пройдите тест на тревожность и самооценку</span>
+                </a>
+            </h2>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading3">
+                <button class="accordion-button collapsed d-flex justify-content-between" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse3" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapse3">
+                    <span> Если тест покажет высокую тревожность:</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapse3" class="accordion-collapse collapse"
+                 aria-labelledby="panelsStayOpen-heading3">
+                <div class="accordion-body">
+                    <ul>
+                        <li>
+                            Определите свои сильные стороны, пропишите их.
+                        </li>
+                        <li>
+                            Займитесь физкультурой. С благодарностью и любовью относитесь к своему телу, но в то же
+                            время не забывайте самосовершенствоваться. Любые физические упражнения сильно поднимают
+                            человека в его собственных глазах. Займитесь бегом трусцой, запишитесь на плавание или в
+                            тренажерный зал, делайте утреннюю гимнастику или, на худой конец, заведите привычку пару
+                            остановок проходить пешком.
+                        </li>
+                        <li>
+                            Избегайте вторжений. Прекратите общение с людьми, которые бесцеремонно вторгаются в вашу
+                            жизнь, навязывают вам свое собственное мнение, свое видение решения проблем и тем более
+                            внушают вам чувство вины. Защищайте свое личное пространство и стройте собственную жизнь по
+                            своему сценарию. Ведь это ваша жизнь, никто, кроме вас, не сможет прожить ее.
+                        </li>
+                        <li>
+                            Научитесь принимать похвалу. У людей очень много страхов. Но ежедневно всем приходится их
+                            преодолевать. Если вам это не удается сделать, попробуйте найти для себя амулет. Это может
+                            быть любая вещица (например, монетка, маленькая игрушка и т. д.). Магическими свойствами она
+                            вряд ли будет обладать, но вы должны поверить, в то, что амулет вам поможет и защитит от
+                            неприятностей.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne1">
+                <a href="{{ url('consultations.index') }}" class="link accordion-button collapsed"
+                   data-bs-target="#panelsStayOpen-collapseOne1" aria-expanded="true"
+                   aria-controls="panelsStayOpen-collapseOne1">
+                    <span>Обратитесь к психологу на индивидуальную консультацию.</span>
+                </a>
+            </h2>
+        </div>
+    </div>
+
+    <h5 class="text-center mt-3 mb-3">Этап 2</h5>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading4">
+                <button class="accordion-button collapsed d-flex justify-content-between" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse4" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapse4">
+                    <span>Определите срок, чтобы вдоволь попечалиться</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapse4" class="accordion-collapse collapse"
+                 aria-labelledby="panelsStayOpen-heading4">
+                <div class="accordion-body">
+                    <p style="text-indent: 25px;">
+                        Выделите себе 2–3 дня, чтобы вдоволь попечалиться. Не пытайтесь специально отвлекаться, думать о
+                        другом или уходить с головой в работу. Наоборот, лучше дать эмоциям выход: поплакать, покричать
+                        в чистом поле или побить подушку.
+                    </p>
+                    <p style="text-indent: 25px;">
+                        Такое интенсивное проживание позволяет выпустить пар, не растягивать послевкусие потери на
+                        несколько месяцев и более трезво оценить завершенный этап жизни.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading5">
+                <button class="accordion-button collapsed d-flex justify-content-between" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse5" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapse5">
+                    <span>У вас любовная зависимость</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse"
+                 aria-labelledby="panelsStayOpen-heading5">
+                <div class="accordion-body">
+                    <p style="text-indent: 25px">
+                        Ваши ответы на вопросы говорят о том, что вы испытываете любовную аддикцию (зависимость). Для
+                        решения этой проблемы выполняйте рекомендации:
+                    </p>
+                    <ul>
+                        <li>
+                            Прописывайте мысли, чувства, ведите дневник.
+                        </li>
+                        <li>
+                            Смените обстановку, хотя бы на неделю.
+                        </li>
+                        <li>
+                            Поставьте себе ограничение на отправку писем (SMS, соцсети и т.д.) — один раз в месяц. А
+                            пока сохраняйте их все в виде текстовых файлов на компьютер. Отправите все разом через месяц
+                            — если захочется, конечно же.
+                        </li>
+                        <li>
+                            Начните писать книгу о вашей любви, где опишите все так, как вам хотелось бы. Подробно
+                            расскажите потенциальному читателю о ваших страданиях, включите письма. Некоторые великие
+                            литературные произведения были построены на эпистолярном жанре. Придумайте красивый
+                            проникновенный эпиграф.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <h5 class="text-center mt-3 mb-3">Этап 3</h5>
+
+    <div class="accordion" id="accordion3">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading6">
+                <button class="accordion-button collapsed d-flex justify-content-between" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse6" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapse6">
+                    <span>Примите всё как есть</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapse6" class="accordion-collapse collapse"
+                 aria-labelledby="panelsStayOpen-heading6">
+                <div class="accordion-body">
+                    <p style="text-indent: 25px;">
+                        Дайте себе время: чтобы пострадать, пожалеть себя, не уходить от ситуации, не бежать от нее, а
+                        остановиться и окунуться с головой. Это нужно пережить, так как иллюзии относительно
+                        несерьезности всего происходящего просто оттянут неминуемый кризис.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading7">
+                <button class="accordion-button collapsed d-flex justify-content-between" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse7" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapse7">
+                    <span>Сублимируйте</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapse7" class="accordion-collapse collapse"
+                 aria-labelledby="panelsStayOpen-heading7">
+                <div class="accordion-body">
+                    <p style="text-indent: 25px">
+                        Применяйте как умственный труд, так активную физическую деятельность. Тем более, адреналин и
+                        норадреналин, выплескиваясь в таких видах спорта, как верховая езда, скалолазание,
+                        дельтапланеризм, и др., поспособствуют в борьбе со стрессом.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading8">
+                <button class="accordion-button collapsed d-flex justify-content-between" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse8" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapse8">
+                    <span>Наладьте питание</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapse8" class="accordion-collapse collapse"
+                 aria-labelledby="panelsStayOpen-heading8">
+                <div class="accordion-body">
+                    <p style="text-indent: 25px">
+                        Иногда неправильное питание может серьезно задерживать обменные процессы, а вместе с тем
+                        энергетическое напряжение. К тому же, хорошими помощниками смогут стать сауна, баня, массаж,
+                        ведь посредством этих процедур с организма выйдут токсины, и вы сможете почувствовать себя
+                        обновленными.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading10">
+                <button class="accordion-button collapsed d-flex justify-content-between" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse10" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapse10">
+                    <span>Займитесь творчеством</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapse10" class="accordion-collapse collapse"
+                 aria-labelledby="panelsStayOpen-heading10">
+                <div class="accordion-body">
+                    <p style="text-indent: 25px">
+                        Очень часто случается, что подобная ситуация служит отравительным пунктом личностного роста,
+                        самосовершенствования. Попробуйте «изложить» свои чувства на холсте, с помощью глины и пр. Не
+                        зря же многие шедевры мировой литературы, музыки, живописи были созданы во время сильных
+                        душевных переживаний, которые испытывали их творцы.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <h5 class="text-center mt-3 mb-3">Этап 4</h5>
+
+    <div class="accordion" id="accordion4">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading11">
+                <button class="accordion-button collapsed d-flex justify-content-between" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse11" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapse11">
+                    <span>Не прибегайте к новым знакомствам</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapse11" class="accordion-collapse collapse"
+                 aria-labelledby="panelsStayOpen-heading11">
+                <div class="accordion-body">
+                    <p style="text-indent: 25px;">
+                        Не стоит сразу прибегать к новым знакомствам, ведь даже при желании хорошо провести время с
+                        новым знакомым, вы будете подсознательно оценивать и сравнивать. Вообще не нужно пытаться
+                        вышибить «клин клином», так как попытка ощутить еще более сильные эмоции может привести ко
+                        многим ошибкам, о которых потом вы будете жалеть.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading12">
+                <button class="accordion-button collapsed d-flex justify-content-between" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse12" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapse12">
+                    <span>Новые занятия</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapse12" class="accordion-collapse collapse"
+                 aria-labelledby="panelsStayOpen-heading12">
+                <div class="accordion-body">
+                    <p style="text-indent: 25px">
+                        Пусть у вас будет много ресурсов, которые позволят спастись от безответного чувства. Новая
+                        работа, увлечение, хобби, волонтерская помощь. Это может быть йога, танцы, курсы вождения,
+                        кружок любителей чтения — все, что угодно.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading13">
+                <button class="accordion-button collapsed d-flex justify-content-between" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse13" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapse13">
+                    <span>Физические нагрузки</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapse13" class="accordion-collapse collapse"
+                 aria-labelledby="panelsStayOpen-heading13">
+                <div class="accordion-body">
+                    <p style="text-indent: 25px">
+                        Усиленные физические нагрузки помогут справиться со стрессом. Проконсультируйтесь с терапевтом
+                        по этому вопросу.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

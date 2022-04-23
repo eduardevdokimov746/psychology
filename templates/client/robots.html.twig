@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+    Ваши тесты
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-3">
+            {{ include('client/navbar.html.twig') }}
+        </div>
+
+        <div class="col-9">
+            {% if robots is empty %}
+                <h4>У вас нет пройденных консультаций у робота-психолога</h4>
+            {% else %}
+                <table class="table table-striped text-center">
+                    <thead>
+                        <tr>
+                            <td>№</td>
+                            <td>Название</td>
+                            <td>Дата прохождения</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for robot in robots %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ robot.robot.title }}</td>
+                                <td>{{ robot.createdAt|date('h:i d.m.Y') }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+

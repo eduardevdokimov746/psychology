@@ -143,4 +143,19 @@ class ClientController extends AbstractController
 
         return $this->render('client/tests.html.twig', ['tests' => $tests]);
     }
+
+    #[Route(path: '/robots', name: 'robots')]
+    public function robots(Request $request): Response
+    {
+        $robots = $this->entityManager->getRepository('Doc:RobotStep')
+            ->createQueryBuilder('rs')
+            ->addSelect('r')
+            ->join('rs.robot', 'r')
+            ->where('rs.clientProfile = :clientProfile')
+            ->setParameter('clientProfile', $request->getSession()->get('auth')->getClientProfile())
+            ->getQuery()
+            ->getResult();
+
+        return $this->render('client/robots.html.twig', ['robots' => $robots]);
+    }
 }

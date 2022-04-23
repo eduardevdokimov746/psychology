@@ -13,6 +13,9 @@
             <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
                     type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Как редактировать профиль?
             </button>
+            <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                Как восстановить пароль?
+            </button>
         </div>
         <div class="tab-content w-75" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -56,6 +59,45 @@
                 </p>
                 <div class="mt-3 mb-3">
                     <img class="m-auto d-flex w-50" src="{{ absolute_url(asset('files/images/faq/2-2.png')) }}">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <p style="text-indent: 25px">
+                    Если вы забыли пароль, есть возможность его восстановить. Для этого перейдите на страницу авторизации или
+                регистрации и нажмите на ссылку "Забыли пароль?".
+                </p>
+                <div class="mt-3 mb-3">
+                    <img class="m-auto d-flex w-50" src="{{ absolute_url(asset('files/images/faq/3-1.png')) }}">
+                </div>
+                <p style="text-indent: 25px">
+                    После чего откроется форма восстановления пароля. В ней необходимо ввести адрес электронной почты,
+                    на который был зарегистрирован профиль и нажать кнопку "Отправить".
+                </p>
+                <div class="mt-3 mb-3">
+                    <img class="m-auto d-flex w-50" src="{{ absolute_url(asset('files/images/faq/3-2.png')) }}">
+                </div>
+                <p style="text-indent: 25px">
+                    Далее на указанную электронную почту, будет отправлено письмо с кодом восстановления. Скопируйте этот код,
+                    вставьте в форму и нажмите кнопку "Подтвердить код".
+                </p>
+                <div class="mt-3 mb-3">
+                    <img class="m-auto d-flex w-50" src="{{ absolute_url(asset('files/images/faq/3-3.png')) }}">
+                </div>
+                <div class="mt-3 mb-3">
+                    <img class="m-auto d-flex w-50" src="{{ absolute_url(asset('files/images/faq/3-m.png')) }}">
+                </div>
+                <p style="text-indent: 25px">
+                    Если код указан верно, откроется форма в которой можно ввести новый пароль. После ввода пароля, необходимо
+                    нажать кнопку "Сохранить".
+                </p>
+                <div class="mt-3 mb-3">
+                    <img class="m-auto d-flex w-50" src="{{ absolute_url(asset('files/images/faq/3-4.png')) }}">
+                </div>
+                <p style="text-indent: 25px">
+                    По завершению процесса восстановления пароля, будет показана страница об успешном завершении.
+                </p>
+                <div class="mt-3 mb-3">
+                    <img class="m-auto d-flex w-50" src="{{ absolute_url(asset('files/images/faq/3-5.png')) }}">
                 </div>
             </div>
         </div>

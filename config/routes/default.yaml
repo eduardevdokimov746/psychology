@@ -1,0 +1,5 @@
+home:
+    path: /
+    controller: App\Controllers\ConsultationController::index
+    defaults:
+        permanent: true

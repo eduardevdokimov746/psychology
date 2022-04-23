@@ -1,0 +1,116 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+    Безответная любовь
+{% endblock %}
+
+{% block content %}
+    <p class="text-center">
+        После расставания с любимым парнем или девушкой, мужем или женой, каждый из нас испытывает боль. И не важно,
+        было ли решение обоюдным, или кто-то бросил партнера. Пережить расставание с любимым человеком вам поможет наша
+        программа робота-психолога. Кроме этого, если вы испытываете безответную любовь к парню или девушке, мечтаете
+        разлюбить, забыть и отпустить этого человека, прохождение данной программы будет для вас очень полезным.
+    </p>
+    <hr>
+    <p>
+        Доброго времени суток! Давайте для начала познакомимся? Расскажите немного о себе...
+        Отвечайте честно. Вся указанная информация конфиденциальна.
+    </p>
+    <h4>Шаг 1</h4>
+
+    <div class="mb-3 w-50">
+        <label for="name" class="form-label">Как вас зовут?</label>
+        <input type="text" class="form-control" id="name">
+    </div>
+
+    <div class="mb-3 row">
+        <label for="age" class="col-2 col-form-label">Ваш возраст:</label>
+        <div class="col-1">
+            <input type="number" class="form-control" id="age" min="10" max="100">
+        </div>
+    </div>
+
+    <div class="mb-3 w-50">
+        <label for="name" class="form-label">Ваш пол?</label>
+        <div class="form-check  ">
+            <input class="form-check-input" type="radio" name="gender" id="male">
+            <label class="form-check-label" for="male">
+                мужчина
+            </label>
+        </div>
+        <div class="form-check ">
+            <input class="form-check-input" type="radio" name="gender" id="female">
+            <label class="form-check-label" for="female">
+                женщина
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-3 w-50">
+        <label for="name" class="form-label">Как долго вы переживаете неразделенные чувства?</label>
+        <div class="form-check  ">
+            <input class="form-check-input" type="radio" name="direction" id="1">
+            <label class="form-check-label" for="1">
+                менее 1 месяца
+            </label>
+        </div>
+        <div class="form-check ">
+            <input class="form-check-input" type="radio" name="direction" id="2">
+            <label class="form-check-label" for="2">
+                больше 1 месяца
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-3 w-50">
+        <label for="name" class="form-label">Ревнуете ли вы его (ее)?</label>
+        <div class="form-check  ">
+            <input class="form-check-input" type="radio" name="revnost" id="3">
+            <label class="form-check-label" for="3">
+                скорее, да
+            </label>
+        </div>
+        <div class="form-check ">
+            <input class="form-check-input" type="radio" name="gender" id="4">
+            <label class="form-check-label" for="4">
+                скорее, нет
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-3 w-50">
+        <label for="name" class="form-label">Чувствуете ли вы обиду на него (нее)?</label>
+        <div class="form-check  ">
+            <input class="form-check-input" type="radio" name="obida" id="5">
+            <label class="form-check-label" for="5">
+                скорее, да
+            </label>
+        </div>
+        <div class="form-check ">
+            <input class="form-check-input" type="radio" name="gender" id="6">
+            <label class="form-check-label" for="6">
+                скорее, нет
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-3 w-50">
+        <label for="name" class="form-label">Были ли вы в романтических отношениях с этим человеком?</label>
+        <div class="form-check ">
+            <input class="form-check-input" type="radio" name="romantica" id="7">
+            <label class="form-check-label" for="7">
+                да
+            </label>
+        </div>
+        <div class="form-check ">
+            <input class="form-check-input" type="radio" name="romantica" id="8">
+            <label class="form-check-label" for="8">
+                нет
+            </label>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-primary" href="{{ url('robot.show', {slug: slug, step: 'step2'}) }}">Далее</a>
+    </div>
+{% endblock %}

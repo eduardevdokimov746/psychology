@@ -33,8 +33,6 @@ class ConsultationController extends AbstractController
             ->getQuery()
             ->getResult();
 
-
-
         $consultationRows = Collection::fromIterable($consultationsArray)
             ->sort(Sortable::BY_VALUES, function ($prev, $next) {
                 return is_null($prev->getPsychologistProfile()) ? 1 : 0;

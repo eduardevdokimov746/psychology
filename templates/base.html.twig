@@ -16,7 +16,7 @@
     <div id="footer-bottom">
         <header class="mt-3">
             <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-3 border-bottom">
-                <a href="{{ url('consultations.index') }}"
+                <a href="{{ url('home') }}"
                    class="d-flex align-items-center text-dark text-decoration-none">
                     <img width="50" src="{{ absolute_url(asset('files/images/logo.jpg')) }}" alt="logo">
                     <h1 class="">{{ app_name }}</h1>
@@ -37,7 +37,7 @@
         </header>
         <p></p>
         <nav class="nav nav-pills nav-fill mb-3">
-            <a class="nav-link {{ 'consultations' in app.request.requestUri ? 'active' }}" aria-current="page"
+            <a class="nav-link {{ 'consultations' in app.request.requestUri or app.request.requestUri|trim('/') is empty  ? 'active' }}" aria-current="page"
                href="{{ url('consultations.index') }}">Консультации</a>
             <a class="nav-link {{ 'robot-psychologist' in app.request.requestUri ? 'active' }}"
                href="{{ url("robot.index") }}">Робот-психолог</a>

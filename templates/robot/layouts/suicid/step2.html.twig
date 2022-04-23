@@ -1,0 +1,133 @@
+{% extends "base.html.twig" %}
+
+{% block content_title %}
+    Суицид (самоубийство)
+{% endblock %}
+
+{% block content %}
+    <p class="text-center">
+        Причины мыслей и желания совершить суицид могут быть самыми разными. Суицид крайне важная проблема не только
+        среди подростков, но и среди взрослых людей. Люди ежедневно совершают самоубийства самыми разными способами, но
+        почему? Чаще всего это происходит от ощущения ненужности себя в этом мире, из-за отсутствия понимания и
+        поддержки. Именно поэтому мы разработали программу робота-психолога для тех, кто имеет мысли о суициде, или же
+        уже совершал такие попытки. Прохождение программы совершенно бесплатно. Тем не менее, если у вас существует
+        такая проблема, для ее лечения необходимо обратиться к психологу.
+    </p>
+    <hr>
+    <h4>Шаг 2</h4>
+
+    <p>
+        Хорошо, user. Спасибо за ваши честные ответы! Как вы думаете, почему у вас возникают мысли о суициде?
+    </p>
+
+    <div class="w-50">
+        <label class="form-label">Другая причина: (опишите как можно подробнее)</label>
+        <textarea class="form-control" rows="5"></textarea>
+    </div>
+
+
+    <div class="mb-3">
+        <label for="age" class="col-form-label">Отметьте галочкой пункты, которые есть у вас.</label>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                Одиночество. Тоска. Усталость. Безысходность.
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+            <label class="form-check-label" for="defaultCheck2">
+                Измена мужа/жены. Бросил парень/девушка
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+            <label class="form-check-label" for="defaultCheck3">
+                Ревность
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+            <label class="form-check-label" for="defaultCheck4">
+                Денежные долги
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+            <label class="form-check-label" for="defaultCheck5">
+                Публичное унижение
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
+            <label class="form-check-label" for="defaultCheck6">
+                Коллективная травля
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
+            <label class="form-check-label" for="defaultCheck7">
+                Подражание кумиру
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck8">
+            <label class="form-check-label" for="defaultCheck8">
+                Смерть детей, близкого человека
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+            <label class="form-check-label" for="defaultCheck9">
+                Систематические избиения
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck10">
+            <label class="form-check-label" for="defaultCheck10">
+                Безработица
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck11">
+            <label class="form-check-label" for="defaultCheck11">
+                Неизлечимая болезнь и связанное с ней ожидание смерти
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck12">
+            <label class="form-check-label" for="defaultCheck12">
+                Получение тяжелой инвалидности
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck13">
+            <label class="form-check-label" for="defaultCheck13">
+                Психическое расстройство
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck14">
+            <label class="form-check-label" for="defaultCheck14">
+                Шантаж
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck15">
+            <label class="form-check-label" for="defaultCheck15">
+                Раскаяние за совершенное убийство или предательство
+            </label>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-primary" href="{{ url('robot.show', {slug: slug, step: 'step3'}) }}">Далее</a>
+    </div>
+{% endblock %}

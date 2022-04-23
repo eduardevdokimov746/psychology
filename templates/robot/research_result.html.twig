@@ -1,42 +1,21 @@
 {% extends "robot/robot_base.html.twig" %}
 
 {% block robot_content %}
-<div class="mt-4">
-    <h5>Пройдите программы:</h5>
-</div>
-<div>
-    <table class="table">
-        <tr>
-            <td class="p-3">
-                <i class="fa-solid fa-arrow-right"></i>
-                <a href="" class="link">Страхи, фобии, панические атаки</a>
-            </td>
-        </tr>
-        <tr>
-            <td class="p-3">
-                <i class="fa-solid fa-arrow-right"></i>
-                <a href="" class="link">Страхи, фобии, панические атаки</a>
-            </td>
-        </tr>
-        <tr>
-            <td class="p-3">
-                <i class="fa-solid fa-arrow-right"></i>
-                <a href="" class="link">Страхи, фобии, панические атаки</a>
-            </td>
-        </tr>
-        <tr>
-            <td class="p-3">
-                <i class="fa-solid fa-arrow-right"></i>
-                <a href="" class="link">Страхи, фобии, панические атаки</a>
-            </td>
-        </tr>
-        <tr>
-            <td class="p-3">
-                <i class="fa-solid fa-arrow-right"></i>
-                <a href="" class="link">Страхи, фобии, панические атаки</a>
-            </td>
-        </tr>
-    </table>
-</div>
-
+    <div class="mt-4">
+        <h5>Пройдите программы:</h5>
+    </div>
+    <div>
+        <table class="table">
+            {% for robot in robots %}
+                {% if random(1) %}
+                    <tr>
+                        <td class="p-3">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <a href="{{ url('robot.show', {slug: robot.slug}) }}" class="link">{{ robot.title }}</a>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}
